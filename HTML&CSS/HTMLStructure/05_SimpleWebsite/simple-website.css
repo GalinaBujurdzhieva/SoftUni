@@ -39,7 +39,10 @@ h1 {
 }
 footer{
     background-color: #444;
-    color: #fff;
+}
+
+footer p{
+    color: rgb(255,255,255);
     padding: 10px;
     text-align: center;
 }
