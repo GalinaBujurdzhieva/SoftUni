@@ -1,0 +1,36 @@
+@media(max-width:600px){
+    .col-md-6.col-12.tm-nav{
+        margin-left: 23%;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .col-12.text-center{
+        text-align: center;
+    }
+    .row.tm-gallery{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .tm-gallery{
+    margin-left: 0px
+    }
+    figure{
+        margin: 0px;
+    }
+    #tm-gallery-page-pizza{
+        margin: 0 20px;
+        width: 100%;
+        justify-content: center;
+    }
+    #avocado{
+        display: flex;
+        flex-direction: column;
+    }
+}
