@@ -1,1 +1,50 @@
-/* TODO: Add responsive styles here... */
+@media (max-width:600px){
+    .container-fluid.hero > img{
+        display: none;
+    } 
+    .navbar-expand-lg.navbar-light{
+        display: block;
+        text-align: center;
+    }
+    .hero h1{
+        margin: 50px 0px 20px;
+    }
+    .container{
+        text-align: center;
+    }
+    .hero-btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 50px;
+        width: 70%;
+        margin-left: 15%;
+    }
+    .col-12.col-sm-12.col-lg-6{
+        margin-top: 50px;
+    }
+    .about {
+        margin-bottom: 50px;
+      }
+
+    h2{
+        text-align: center;
+    }
+    .service-box{
+        text-align: left;
+    }
+    .hero-btns.contact-btn{
+        display: none;
+    }
+    .contact-nav{
+        display: flex;
+        flex-direction: column;
+    }
+    .col-12 > h6{
+        padding-bottom: 10px;
+    }
+    foote > h3{
+        display: inline-block;
+    }
+}
+
