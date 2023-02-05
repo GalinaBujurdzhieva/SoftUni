@@ -1,0 +1,192 @@
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300&display=swap');
+
+:root{
+    --var-clr-background-gray:#efefef;
+    --var-clr-icons-background-dark-gray:#909090;
+}
+html{
+    font-family: 'Raleway', sans-serif;
+}
+.header-menu{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    z-index: 1;
+    right: 70px;
+    bottom: 600px;
+    font-size: 16px;
+}
+.header-menu > h3{
+    font-weight: 500;
+}
+
+section{
+    background-color: var(--var-clr-background-gray);
+    margin: 20px 20px;
+    position: relative;
+    height: 80vh;
+}
+h2{
+    font-size: 38px;
+}
+
+/* FIRST SECTION */
+.section-with-vertical-divider, .section-with-horizontal-divider{
+    display: flex;
+    gap:10%;
+    align-items: center;
+    position: relative;
+}
+.left-part-with-info-and-vertical-divider{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: 7%;
+    padding-bottom: 5%;
+}
+.left-part-with-info-and-vertical-divider > h2, .right-part-with-info-and-horizontal-divider > h2, .contact-section > h2{
+    font-weight: 200;
+}
+.left-part-with-info-and-vertical-divider > h2 > span, .right-part-with-info-and-horizontal-divider > h2 > span, .contact-section > h2 > span{
+    font-weight: 600;
+}
+.left-part-with-info-and-vertical-divider > p, .right-part-with-info-and-horizontal-divider > p, .contact-section > p{
+    font-style: italic;
+    font-weight: 600;
+    line-height: 2;
+    font-size: 14px;
+}
+.right-part-with-image{
+    /* width: 60%; */
+    height: 500px;
+}
+.vertical-divider{
+    border-left: 1px solid black;
+    height: 4rem;
+}
+.right-part-with-image{
+    position: absolute;
+    bottom: 0px;
+    right: 100px;
+}
+
+/* SECOND SECTION */
+.section-with-horizontal-divider{
+    gap:3%;
+}
+.right-part-with-info-and-horizontal-divider{
+    padding-left: 5%;
+}
+.right-part-with-info-and-horizontal-divider > p{
+    padding-right: 150px;
+}
+.left-part-with-image{
+    padding-left: 5%;
+    padding-bottom: 1%;
+    width:30%;
+    height: auto;
+}
+
+/* THIRD SECTION */
+.big-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.horizontal-divider{
+    border-top: 1px solid black;
+    width: 4rem;
+    display: inline-block;
+    margin-right: 20px;
+    padding-bottom: 10px;
+}
+.right-part-with-info-and-horizontal-divider > h2{
+    display: inline-block;
+}
+.icons{
+    font-size: 40px;
+    color: var(--var-clr-icons-background-dark-gray);
+   
+}
+.icons > i{
+    margin-right: 2%;
+    border-radius: 0px;
+}
+
+/* FOURTH SECTION */
+.right-part-with-image-center{
+    height: 400px;
+}
+
+/* FIFTH SECTION */
+.section-with-3-images > img{
+    width: 25%;
+    position: relative;
+    top:25%;
+}
+.section-with-3-images > img:nth-child(1){
+    padding-left: 12.5%;
+    padding-top: 1.5%;
+}
+.section-with-3-images > img:nth-child(2){
+    transform: scale(1.5);
+    z-index: 2;
+}
+
+/* SIXTH SECTION */
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    position: relative;
+}
+.contact-section > p{
+    display: inline-block;
+    width: 60%;
+    text-align: center;
+}
+.contact-section-form{
+    display: grid;
+    grid-template-areas: 
+    "email subject"
+    "message message"
+    "button button";
+    gap:10%;
+    width: 40%;
+}
+input, textarea{
+    border: 1px solid black;
+}
+input::placeholder, textarea::placeholder{
+    padding-left: 10px;
+    padding-top: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+.input-email{
+    grid-area: email;
+    height: 30px;
+}
+.input-subject{
+    grid-area: subject;
+}
+.input-message{
+    grid-area: message;
+}
+.input-button{
+    grid-area: button;
+    height: 30px;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+footer{
+    position: absolute;
+    bottom:-2800px;
+    left:47%;
+    font-size: 14px;
+}
