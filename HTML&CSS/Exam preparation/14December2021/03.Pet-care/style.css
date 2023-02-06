@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root{
+    --var-clr-text-orange:#ff3600;
+    --var-clr-text-gray:#66666f;
+    --var-clr-nav: #102955;
+    --var-clr-button-orange-1:#f24537;
+    --var-clr-button-orange-2:#ed5b0e;
+}
+h1, h2, h3{
+    font-family: 'Poppins', sans-serif;
+}
+p, ul, button, span{
+    font-family: 'Open Sans', sans-serif;
+}
+ul{
+    padding-left: 0px;
+    font-size: 14px;
+}
+section{
+    margin-bottom: 10%;
+    height: 80vh;
+} 
+
+/* HEADER */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.header__nav-list{
+    font-weight: 600;
+    display: flex;
+    gap:15%;
+    color:var(--var-clr-nav);
+  
+}
+
+/* ABOUT */
+.about{
+    background-image: url(images/header-bg.png);
+    background-size:cover;
+}
+.about{
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10%;
+}
+.about__dog-image{
+    padding-top: 12%;
+    width: 57%;
+}
+.about__info{
+    padding-bottom: 8%;
+}
+.about__info > h1{
+    padding-top: 40%;
+    font-size: 50px;
+    font-weight: 300;
+}
+.about__info > h1 > span{
+    display: block;
+    font-weight: bold;
+}
+.about__info > p{
+    font-size: 12px;
+    line-height: 2; 
+}
+.about__info > button, .button__contact-us{
+    color:var(--var-clr-text-orange);
+    background-color: white;
+    border:none;
+    font-size: 14px;
+    font-weight: 600;
+    width: 130px;
+    height: 40px;
+    border-radius: 25px;
+    margin-top: 10%;
+}
+
+/* SERVICES */
+.services__main-info{
+    text-align: center;
+}
+.services__main-info > h2, .care > div > h2, .anipat__container > h2 {
+    font-size: 36px;
+}
+.services__main-info > p, .card > p, .care > div > p, footer li, .footer__logo-paragraph{
+    color: var(--var-clr-text-gray);
+    line-height: 2;
+}
+
+.cards__section{
+    margin-top: 5%;
+    padding-left: 20%;
+    padding-right: 12%;
+    height: 300px;
+    display: flex;
+    gap:2%;
+}
+.card{
+    width: 30%;
+    height: 150%;
+    border: 0.5px solid var(--var-clr-button-orange-1);
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card > p{
+    padding: 5% 10%;
+}
+
+.cards__section__images{
+    position: relative;
+    margin-bottom: 10%;
+}
+.card__dog-image{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+/* CARE */
+.care{
+    padding-left: 15%;
+    padding-right: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+.care__img{
+    width:80%;
+}
+.care > div > h2 > span{
+    font-weight: 400;
+    display: block;
+}
+.care__info > p{
+    margin-top: 5%;
+}
+.care > div > button{
+    background-color:var(--var-clr-text-orange);
+    color: white;
+    border:none;
+    font-size: 14px;
+    font-weight: 600;
+    width: 130px;
+    height: 40px;
+    border-radius: 25px;
+    margin-top: 10%;
+}
+
+/* ANIPAT */
+.anipat{
+    background-image: url(images/cats-bg.png);
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.anipat__container{
+    text-align: center;
+    color: white;
+    width:35%;
+}
+.anipat__container > h2{
+    margin-bottom: 5%;
+}
+.anipat__container > p{
+    font-size: 16px;
+    line-height: 1.5;
+}
+.care__buttons__container > span{
+    padding-left: 2%;
+}
+.button__contact-us{
+    margin-top: 5%;
+    margin-right: 2%;
+}
+.button__phone-number{
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+/* FOOTER */
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5%;
+    margin-bottom: 10%;
+}
+footer h3{
+    padding-bottom: 10%;
+    font-weight: 600;
+}
+.footer__logo-img{
+    width: 40%;
+    margin-bottom: 10%;
+}
+.footer__logo-paragraph{
+    margin-bottom: 25%;
+    font-size: 14px;
+}
