@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --var-clr-green: #008000;
+}
+html{
+    font-family: 'PT Serif', serif;
+}
+section{
+    width:65%;
+    margin: 5% 15%;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.55);
+
+
+    display: grid;
+    grid-template-areas: 
+    "info img";
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+}
+h1{
+    text-align: center;
+    border-bottom: 1px dotted var(--var-clr-green);
+}
+.h2-container{
+    display: flex;
+    font-size: 12px;
+    font-style: italic;
+    justify-content: space-between;
+}
+h2{
+    font-weight: 300;
+}
+.info{
+    padding: 5%;
+}
+ul{
+    list-style: none;
+    padding-left: 0px;
+}
+span{
+    color:var(--var-clr-green);
+    font-weight: 600;
+}
+p{
+    margin-bottom: 5%;
+}
+table{
+    table-layout: fixed;
+    width: 100%;
+}
+table{
+    text-align: center;
+}
+table, td, th{
+    border: 1px solid var(--var-clr-green);
+    border-collapse: collapse;
+}
+.img-wrapper{
+    display: flex;
+    align-items: center;justify-content: center;
+}
+.kiwi-smoothie{
+    width:75%;
+}
