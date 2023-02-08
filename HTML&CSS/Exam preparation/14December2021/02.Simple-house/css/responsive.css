@@ -1,4 +1,7 @@
 @media(max-width:600px){
+    *, *::before, *::after{
+        box-sizing:unset;
+}
     .col-md-6.col-12.tm-nav{
         margin-left: 23%;
     }
