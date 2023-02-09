@@ -3,6 +3,10 @@
 :root{
     --var-clr-green: #008000;
 }
+section{
+    background-image: url(image/image1.png);
+    object-fit: cover;
+}
 html{
     font-family: 'PT Serif', serif;
 }
