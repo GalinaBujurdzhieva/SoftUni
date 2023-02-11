@@ -1,0 +1,93 @@
+@media(max-width:800px){
+    .menu{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+    .nav-options{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: unset;
+    }
+    .trainings div{
+        margin: 0px;
+        width: 60%;
+    }
+    .trainings{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .classes, .instructors{
+       width: 100%;
+       margin: 0px; 
+    }
+    .instructors-pic{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .classes ul{
+        gap:20px;
+    }
+    .classes li{
+        width: 45%;
+    }
+    .getInTouch{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-left: 0px;
+        overflow: visible;
+    }
+    .form{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;  
+        margin: 0px;
+    }
+    .map img{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        transform: none;
+        align-items: center;
+        width: 90%;
+    }
+    .map:after{
+        padding-top: 10%;
+    }
+    .wrapper {
+        display: inline-block;
+    }
+    .site-footer {
+        display: flex;
+    }
+    .site-footer .wrapper {
+        display: flex;
+        padding: 1.5rem;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .site-footer .about {
+        flex: unset;
+    }
+
+    .site-footer .sitemap ul {
+        display: unset;
+        flex-wrap: wrap;
+    }
+
+    .sitemap {
+        padding-right: 300px;
+    }
+}
