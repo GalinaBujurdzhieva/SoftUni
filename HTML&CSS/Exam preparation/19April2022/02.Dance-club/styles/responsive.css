@@ -64,9 +64,6 @@
     .map:after{
         padding-top: 10%;
     }
-    .wrapper {
-        display: inline-block;
-    }
     .site-footer {
         display: flex;
     }
@@ -77,16 +74,13 @@
         flex-wrap: wrap;
         justify-content: flex-start;
     }
-
     .site-footer .about {
         flex: unset;
     }
-
     .site-footer .sitemap ul {
         display: unset;
         flex-wrap: wrap;
     }
-
     .sitemap {
         padding-right: 300px;
     }
