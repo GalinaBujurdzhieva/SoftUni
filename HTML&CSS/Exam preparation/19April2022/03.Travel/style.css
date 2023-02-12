@@ -1,0 +1,209 @@
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+
+:root{
+    --var-clr-background-dark-orange:#95660a;
+    --var-clr-background-light-orange:#d0ac3c;
+    --var-clr-text-gray:#4b5171;
+    --var-btn-orange:#ffa300;
+}
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER SECTION */
+header{
+position: relative;
+color:#4b5171;
+margin-right: 5%;
+}
+.logo{
+    background-image: linear-gradient(to bottom, #d0ac3c, #95660a);
+    position: absolute;
+    top:40px;
+    left:100px;
+    padding: 2%;
+}
+.nav-container{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.nav-list-with-icons{
+    display: flex;
+}
+.nav-item-with-icon{
+    height:80px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    font-size: 14px;
+}
+.nav-item-with-icon a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+.nav-item-with-icon i{
+    font-size: 25px;
+}
+.nav-item-with-icon:nth-child(1){
+    width:100px;
+}
+.nav-item-with-icon:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #95660a;
+}
+.nav-item-with-icon a{
+    color: #4b5171;
+}
+.ordinary-nav-list{
+    display: flex;
+    gap:25px;
+    font-size: 14px;
+}
+.ordinary-nav-list-item{
+    padding: 10px;
+}
+.ordinary-nav-list-item a{
+    color: #4b5171;
+}
+.ordinary-nav-list-item:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #95660a;
+}
+/* SLIDER SECTION */
+.slider{
+    height: 70vh;
+    background-image: url(image/slider.jpg);
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.slider-info-container{
+    width:38vw;
+    height: 42vh;
+    color:white;
+    background-color: black;
+    opacity:0.6;
+    padding: 30px;
+    position: absolute;
+    top: 46%;
+    left: 100px;
+}
+.slider-info-container h2{
+    font-size:30px;
+    margin-bottom: 20px;
+}
+.slider-info-container p{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.nav-item-with-icon a, .ordinary-nav-list-item a{
+    text-decoration: none;
+}
+.slider-info-container .btn-main{
+    background-color: transparent;
+    color: #ffa300;
+    border: 3px solid white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    width: 150px;
+}
+.slider-info-container .btn-main:hover{
+    background-color: white;
+    cursor: pointer;
+}
+/* CARD SECTION */
+.business-card{
+    background-image: linear-gradient(to right,  #95660a, #d0ac3c);
+    height: 60vh;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.business-card-list{
+    width: 45%;
+    font-size: 20px;
+    line-height: 2;
+}
+.business-card-list-item i{
+    padding-right: 10px;
+}
+.btn-secondary{
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    width: 150px;
+    cursor: pointer;
+}
+/* ADVANTAGES SECTION */
+.advantages{
+    height: 70vh;
+    color:#4b5171;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.advantages h1{
+    width: 75%;
+    font-size: 44px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.advantages p{
+    font-size: 18px;
+}
+.advantages-container{
+    width: 72%;
+}
+.advantages-list{
+    display: flex;
+}
+.advantages-list-items{
+    width: 20%;
+    text-align: center;
+}
+.advantages-list-items img{
+    padding: 3px;
+    background-color: white;
+    border:3px solid #4b5171;
+    border-radius: 100%;
+    margin-bottom: 10px;
+}
+
+
+/* NEWSLETTER SECTION */
+.newsletter{
+    background-image: linear-gradient(to right,  #d0ac3c, #95660a);
+    height: 12vh;
+    color: white;
+    padding: 10px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.newsletter p{
+    font-size: 16px;
+}
+
+/* FOOTER SECTION */
+footer{
+    text-align: center;
+    padding: 15px;
+}
