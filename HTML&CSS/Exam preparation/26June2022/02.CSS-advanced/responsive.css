@@ -44,5 +44,7 @@
     #send{
         margin-left: 40%;
     }
-
+      article > img{
+        margin-left: 10%;
+    }
     }
