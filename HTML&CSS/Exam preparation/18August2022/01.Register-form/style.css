@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap');
+
+:root{
+    --var-clr-red-btn: #ae3c33;
+    --var-clr-gray-text:#666666;
+}
+html{
+    font-family: 'Mulish', sans-serif;
+    background-image: url(images/background.png);
+    background-size: cover;
+    position: relative;
+}
+.registration-form{
+    height:77vh;
+    width:45vw;
+    background-image: url(images/form-background.png);
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding-left: 3%;
+}
+h1{
+    display: inline-block;
+    width:50%;
+    padding-top: 12%;
+    padding-bottom: 3%;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+label{
+    margin-bottom: 1%;
+    font-size: 14px;
+    color:var(--var-clr-gray-text)
+}
+input{
+    margin-bottom: 3%;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+}
+.form-container{
+    display: flex;
+    width:50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap:5%;
+}
+input{
+    height: 35px;
+}
+#email, #password, #confirm-password{
+    width:100%;
+}
+.names{
+    margin-bottom: 3%;
+    display: grid;
+    grid-template-areas: 
+    "first-name-label second-name-label"
+    "first-name-input second-name-input";
+    grid-template-columns: 155px 155px;
+    gap: 10px;
+}
+.first{
+    grid-area: first-name-label;
+}
+.second{
+    grid-area: second-name-label;
+}
+#first-name{
+    grid-area: first-name-input;
+}
+#second-name{
+    grid-area: second-name-input;
+}
+.terms-and-privacy {
+    display: flex;
+    align-items:center;
+    gap:10px;
+    font-size: 12px;
+}
+#terms-and-privacy{
+   accent-color:var(--var-clr-gray-text);
+}
+.primary-btn{
+    display: block;
+    background-color: var(--var-clr-red-btn);
+    color: white;
+    border: none;
+    height: 35px;
+    border-radius: 20px;
+    width: 40%;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
