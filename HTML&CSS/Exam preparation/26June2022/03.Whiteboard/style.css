@@ -1,0 +1,212 @@
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+:root{
+    --var-clr-green-text-icon-btn:#00d08e;
+    --var-clr-green-background:#b2f1dd;
+}
+*{
+    font-family: 'PT Sans', sans-serif;
+}
+body{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+header, header a, .hero, .hero-text, .hero-text a{
+    color:white;
+}
+
+/* NAVBAR SECTION */
+.logo, .cart > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+
+    font-size: 20px;
+    position:absolute;
+    z-index: 2;
+    top: 5%;
+}
+.logo{
+    left:15%;
+}
+.cart > a{
+    text-decoration: none;
+    right: 15%;
+}
+
+/* HERO SECTION */
+.hero{
+    height: 85vh;
+    background-image: url(image/computer-main.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.hero::before{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    left:0px;
+    background-color: black;
+    opacity: 0.5;
+}
+.hero-text{
+    position: absolute;
+    top: 20%;
+    left:20%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-size: 58px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.hero-text > p{
+    font-size: 20px;
+    width:70%;
+    text-align: center;
+    margin-bottom: 80px;
+}
+.hero-text > button{
+    background-color: var(--var-clr-green-text-icon-btn);
+    color:white;
+    border: none;
+    padding: 5px;
+    width: 120px;
+    border-radius: 3px;
+    font-size: 20px;
+    margin-bottom: 80px;
+    font-weight: 600;
+}
+.hero-text > button:hover{
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+}
+.hero-text a, .hero-text i{
+    text-decoration: none;
+    font-size: 18px;
+}
+.hero-text a{
+    padding-right: 10px;
+}
+.hero-text i{
+    font-weight: bold;
+    background-color: black;
+    border-radius: 100%;
+}
+
+/* HUSTLE-WHAT SECTION */
+.hustle-what, .hustle-case{
+    display: flex;
+    align-items: stretch;
+    height: 60vh;
+}
+.hustle-what-image, .perfect-for-image{
+    object-fit: cover;
+    width:50%;
+}
+.hustle-what-info{
+    padding-left: 5%;
+    padding-right: 5%;
+    width:50%;
+  
+}
+.hustle-what-info h2, .hustle-case h2, .questions h2{
+    font-size: 36px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+.hustle-what-info p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+.hustle-what-info ul{
+    padding-left: 0px;
+}
+.hustle-what-info li{
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.hustle-what-info i{
+    color: var(--var-clr-green-text-icon-btn);
+    margin-right: 25px;
+}
+
+/* HUSTLE-CASE SECTION */
+.perfect-for-container{
+    width: 50%;
+}
+.hustle-case-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 3% 20%;
+}
+.hustle-case-list img{
+    width:80%;
+}
+.hustle-case-list-item{
+    color:var(--var-clr-green-text-icon-btn);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+.hustle-case h2, .questions h2{
+    text-align: center;
+}
+ /* QUESTIONS SECTION */
+ .questions{
+    height: 75vh;
+    background-color: var(--var-clr-green-background);
+ }
+ .main-question-container{
+    padding: 3% 10%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:8%
+ }
+ .main-question-container h3{
+    font-size: 22px;
+ }
+ .question-container{
+    text-align: center;
+ }
+ .question-container p{
+    font-size: 17px;
+    margin-bottom: 8%;
+ }
+ .questions p{
+    text-align: center;
+ }
+ .questions a{
+    margin-top: 5%;
+    font-size: 17px;
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+ }
