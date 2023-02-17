@@ -1,0 +1,196 @@
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+:root{
+    --var-clr-left-gradient: #9f968e;
+    --var-clr-right-gradient: #cbc8c7;
+    --var-clr-light-brown-quotation-div: #89817d;
+    --var-clr-pearl-right-section-and-form-backbround: #bab1ad;
+    --var-clr-gray-left-section-backbround: #f2f0f3;
+    --var-clr-green-btn: #67784d;
+}
+main{
+   padding-left: 5%;;
+    margin-right: 5%;
+}
+h1, h2{
+    font-family: 'Abril Fatface', cursive;
+    margin-bottom: 10px;
+}
+p, li{
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-size: 48px;
+}
+h2{
+    font-size: 36px;
+    text-transform: uppercase;
+   
+}
+/* HERO */
+.hero{
+    height: 100vh;
+    background: url(image/image.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+.company-name{
+    height:250px;
+    width:300px;
+    border: 1px solid #6d6b6b;
+    box-shadow: 5px 5px 10px 10px rgba(128, 128, 128, 0.3);
+    padding: 10px 20px;
+
+    position: absolute;
+    top: 5%;
+    left: 4%;
+}
+.white-line{
+    border: 1px solid white;
+    width: 200px;
+    margin-bottom: 20px;
+}
+.company-name p{
+    font-size: 22px;
+    font-weight: 400;
+}
+.featured-projects{
+    background-image: linear-gradient(to right, #9f968e, #cbc8c7);
+    height:350px;
+    width:400px;
+    border: 1px solid #6d6b6b;
+    box-shadow: 5px 5px 10px 10px rgba(128, 128, 128, 0.3);
+    font-size: 20px;
+    text-align: right;
+    color: white;
+    position: absolute;
+    bottom: 30%;
+    right: 5%;
+    padding: 20px 30px;
+}
+.vertical{
+    display: inline-block;
+    border-left: 5px solid var(--var-clr-light-brown-quotation-div);
+    height: 30px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #565250;
+    border-right: 1px solid #565250;
+}
+.vertical:nth-child(1){
+   margin-left: 80%;
+}
+
+/* WRAPPER*/
+.wrapper{
+    height: 100vh;
+    display: flex;
+}
+.left-section{
+    padding-top: 3%;
+    width: 75%;
+    height: 100%;
+    background-color: var(--var-clr-gray-left-section-backbround);
+}
+/* SERVICES */
+.services{
+    padding-left: 90px;
+    height: 75%;
+    width: 90%;
+}
+.left-section ul{
+    font-size: 26px;
+}
+.services-list li{
+    padding-bottom: 20px;
+}
+.services-list i{
+    padding-right: 15px;
+}
+b{
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+/* CONTACTS */
+.contacts{
+    width: 100%;
+    padding-left:0px;
+}
+.contacts h2{
+    padding-left: 90px;
+}
+.black-line{
+    padding-left: 0px;
+    border-bottom: 2px solid black;
+}
+.contacts ul{
+    width: 90%;
+    padding-left: 90px;
+}
+.contact-list ul{
+    padding-left: 25%;
+}
+.contact-list li{
+    display: inline-block;
+    
+}
+.contact-list li:nth-child(2), .contact-list li:nth-child(3), .contact-list li:nth-child(4), .contact-list li:nth-child(6){
+    padding-left: 15px;
+}
+.contact-list b{
+    font-style: italic;
+    padding-right: 2px;
+}
+.contacts form{
+    padding-left: 90px;
+}
+.contacts form input, .contacts form button{
+   height: 50px;
+   border: none;
+   border-radius: 6px;
+}
+.contacts form input{
+    width:36%;
+    margin-right: 15px;
+    background-color: var(--var-clr-pearl-right-section-and-form-backbround);
+}
+.contacts form button{
+    width: 18%;
+    background-color: var(--var-clr-green-btn);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.contacts form input::placeholder{
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.aside-section{
+    width: 25%;
+    height: 100%;
+    background-color: var(--var-clr-pearl-right-section-and-form-backbround);
+}
+/* ASIDE */
+.aside-section{
+    padding: 2% 3%;
+}
+.statistiks{
+    display: flex;
+    flex-direction: column;
+    gap:160px;
+    justify-content: space-between;
+}
+.statistiks li span{
+    display: block;
+    color: white;
+    font-size: 64px;
+    font-weight: 100;
+}
+.statistiks li{
+    text-transform: uppercase;
+    font-size: 20px;
+}
