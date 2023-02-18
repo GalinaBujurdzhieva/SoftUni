@@ -1,0 +1,16 @@
+@media (max-width: 600px){
+    body{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+   .w3-right.w3-hide-small{
+        display: none;
+    }
+    .w3-col.m6.w3-padding-large, .w3-col.l6.w3-padding-large{
+        width: 100%;
+    }
+    img[src$="https://www.w3schools.com/w3images/tablesetting2.jpg"] { 
+        display: none 
+    }
+}
