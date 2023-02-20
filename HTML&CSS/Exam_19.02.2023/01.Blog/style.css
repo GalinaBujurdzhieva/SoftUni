@@ -1,0 +1,68 @@
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --clr-beige-background: #f4dfb4;
+    --clr-gray-background: #66545e;
+    --clr-gray-arrow-icons: #64505b;
+    --clr-gray-text-color: #63525d;
+}
+
+html{
+    background-color: var(--clr-beige-background);
+    font-family: 'Open Sans', sans-serif;
+}
+
+section{
+    height: 80vh;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3% 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap:90px;
+}
+.movie-images{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 5%;
+}
+
+.card{
+    width: 100%;
+    background-color: var(--clr-gray-background);
+    border: 2px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 25px 15px 10px rgba(135, 135, 135, 0.5);
+}
+.card h2{
+    padding: 5px 0px 10px 10px;
+    color:white;
+    font-size: 26px;
+}
+.card img{
+    width: 100%;
+    height: 80%;
+}
+.other-category{
+    color:var(--clr-gray-text-color);
+    width: 20%;
+}
+.other-category h2{
+font-weight: 700;
+}
+.other-category-list{
+    font-size: 24px;
+}
+.other-category-list i{
+    padding-right: 10px;
+}
+.other-category-list li{
+    font-weight: 500;
+    margin-bottom: 15px;
+}
