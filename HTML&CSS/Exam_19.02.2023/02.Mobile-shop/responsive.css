@@ -1,0 +1,68 @@
+@media(max-width:600px){
+    html{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+    .navbar-link, .home-container01{
+        display: none;
+    }
+    .navbar-logo-title{
+        margin: 0px;
+    }
+    div.home-main .home-hero1 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .home-main{
+        padding-bottom: 40px;
+    }
+    .home-full-width-banner, .section-container{
+        padding-top: 40px;
+    }
+    .home-info,
+    .home-container04,
+    .home-btn-group{
+        justify-content: center;
+    }
+    .home-btn-group{
+        padding-bottom: 20px;
+    }
+    .home-left4{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .home-cards-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .category-card-category-card img{
+        width:100%;
+    }
+    .home-full-width-banner.section-container{
+        flex-direction: column;
+    }
+    .home-image6{
+        width: 100%;
+    }
+    .max-width-container{
+        justify-content: center;
+        width: 100%;
+    }
+    .blog-post-card-blog-post-card{
+        max-width: none;
+    }
+    .home-footer1{
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+    
+    div.home-footer div.home-links-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
