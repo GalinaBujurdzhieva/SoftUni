@@ -1,0 +1,369 @@
+//01. Ages
+function solve(age){
+    if (age >= 0 && age <=2) {
+        console.log('baby');
+    }
+    else if (age >= 3 && age <=13) {
+        console.log('child');
+    }
+    else if (age >= 14 && age <=19) {
+        console.log('teenager');
+    }
+    else if (age >= 20 && age <=65) {
+        console.log('adult');
+    }
+    else if (age >= 65) {
+        console.log('elder');
+    }
+    else{
+        console.log('out of bounds');
+    }
+}
+solve(20);
+solve(1);
+solve(100);
+solve(-1);
+
+//02. Vacation
+function solve(peopleCount, groupType, dayOfWeek){
+    let totalPrice = 0;
+    switch (groupType) {
+        case 'Students':
+            if (dayOfWeek === 'Friday') {
+                totalPrice = peopleCount * 8.45;
+            }
+            else if (dayOfWeek === 'Saturday') {
+                totalPrice = peopleCount * 9.80;
+            }
+            else if (dayOfWeek === 'Sunday') {
+                totalPrice = peopleCount * 10.46;
+            }  
+          if (peopleCount >= 30) {
+            totalPrice = totalPrice * 0.85;
+          }
+        break;
+        case 'Business':
+            if (peopleCount >= 100) {
+                peopleCount = peopleCount - 10;
+            }
+            if (dayOfWeek === 'Friday') {
+                totalPrice = peopleCount * 10.90;
+            }
+            else if (dayOfWeek === 'Saturday') {
+                totalPrice = peopleCount * 15.60;
+            }
+            else if (dayOfWeek === 'Sunday') {
+                totalPrice = peopleCount * 16;
+            }  
+        break;
+        case 'Regular':
+            if (dayOfWeek === 'Friday') {
+                totalPrice = peopleCount * 15;
+            }
+            else if (dayOfWeek === 'Saturday') {
+                totalPrice = peopleCount * 20;
+            }
+            else if (dayOfWeek === 'Sunday') {
+                totalPrice = peopleCount * 22.5;
+            }  
+            if (peopleCount >= 10 && peopleCount <= 20) {
+                totalPrice = totalPrice * 0.95;
+            }
+        break;
+    }
+    console.log(`Total price: ${totalPrice.toFixed(2)}`)
+}
+solve(30, "Students","Sunday");
+solve(40, "Regular", "Saturday");
+
+// 03. Lear Year
+function solve(year){
+    if ((year % 4 === 0 && year % 100 !== 0)  || year % 400 === 0) {
+        console.log(`yes`);
+    }
+    else{
+        console.log(`no`);
+    }
+}
+solve(1984);
+solve(2003);
+solve(4);
+
+// 04. Print and Sum
+function solve(startNumber, endNumber){
+    let arrayWithNumbers = [];
+    let sum = 0;
+    for (let i = startNumber; i <= endNumber; i++) {
+        arrayWithNumbers.push(i);
+        sum += i;
+    }
+    console.log(arrayWithNumbers.join(' ').trimEnd());
+    console.log(`Sum: ${sum}`);
+}
+solve(5, 10);
+solve(0, 26);
+
+// 05. Multiplication Table
+function solve (number){
+    let product = 0;
+    for (let i = 1; i <= 10; i++) {
+        product = number * i;
+        console.log(`${number} X ${i} = ${product}`)
+    }
+}
+solve(5);
+solve(2);
+
+//06. Sum Digits
+function solve(number){
+    let numberAsString = number.toString();
+    let sum = 0;
+    for (const digitAsString of numberAsString) {
+        sum += Number(digitAsString);
+    }
+    console.log(sum);
+}
+solve(245678);
+solve(97561);
+solve(543);
+
+//07. Chars to String
+function solve(char1, char2, char3){
+    let word = char1 + char2 + char3;
+    console.log(word);
+}
+solve('a','b','c');
+solve('%','2','o');
+solve('1','5','p');
+
+//08. Reversed Chars
+function solve(char1, char2, char3){
+    let word = char3 + ' ' + char2 + ' ' + char1;
+    console.log(word);
+}
+solve('A','B','C');
+solve('1','L','&');
+
+// 09. Fruit
+function solve(fruit, weightInGrams, pricePerKg){
+    let money = (weightInGrams * 1.00 / 1000) * pricePerKg;
+     console.log(`I need $${money.toFixed(2)} to buy ${(weightInGrams * 1.00 / 1000).toFixed(2)} kilograms ${fruit}.`)
+}
+solve('orange', 2500, 1.80);
+solve('apple', 1563, 2.35);
+
+//10. Same Numbers
+function solve(number){
+    let numberAsString = number.toString();
+    let sum = 0;
+    let firstNumber = Number(numberAsString[0]);
+    let areEqual = true;
+    for (const digitAsString of numberAsString) {
+        if (firstNumber !== Number(digitAsString)) {
+            areEqual = false
+        }
+        sum += Number(digitAsString);
+    }
+    console.log(areEqual);
+    console.log(sum);
+}
+solve(2222222);
+solve(1234);
+
+//11. Road Radar
+function solve(speed, area){
+    let isInTheLimits = true;
+    let difference = 0;
+    let speedLimit = 0;
+    let status = '';
+    switch (area) {
+        case `motorway`:
+            speedLimit = 130;
+            if (speed > 130) {
+               isInTheLimits = false;
+               difference = speed - 130;
+            }
+        break;
+        case `interstate`:
+            speedLimit = 90;
+            if (speed > 90) {
+                isInTheLimits = false;
+                difference = speed - 90;
+            }
+        break;
+        case `city`:
+            speedLimit = 50;
+            if (speed > 50) {
+                isInTheLimits = false;
+                difference = speed - 50;       
+            }
+        break;  
+        case `residential`:
+            speedLimit = 20;
+            if (speed > 20) {
+                isInTheLimits = false;
+                difference = speed - 20;      
+            }
+        break;
+    }
+    if (isInTheLimits) {
+        console.log(`Driving ${speed} km/h in a ${speedLimit} zone`)
+    }
+    else{
+        if (difference <= 20) {
+            status = 'speeding';
+        }
+        else if (difference > 20 && difference <= 40) {
+            status = 'excessive speeding';
+        }
+        else {
+            status = 'reckless driving'
+        }
+        console.log(`The speed is ${difference} km/h faster than the allowed speed of ${speedLimit} - ${status}`)
+    }
+}
+solve(40, 'city');
+solve(21, 'residential');
+solve(120, 'interstate');
+solve(200, 'motorway');
+
+//12. Cooking by Numbers
+function solve (numberAsString, ...operations){
+    let result = Number(numberAsString);
+    for (const operation of operations) {
+        switch (operation) {
+            case 'chop':
+               result /= 2; 
+               
+                break;
+            case 'dice':
+                result = Math.sqrt(result);
+                break;
+            case 'spice':
+                result += 1;
+                break;
+            case 'bake':
+                result *= 3;
+                break;
+            default:
+                result *= 0.8;
+                break;
+        }
+        console.log(result);
+    }
+}
+solve('32', 'chop', 'chop', 'chop', 'chop', 'chop');
+solve('9', 'dice', 'spice', 'chop', 'bake', 'fillet');
+
+//13. Array Rotation
+function solve (array, operationsCount){
+    let numberOfOperations = operationsCount;
+    if (array.length < operationsCount) {
+        numberOfOperations = operationsCount - array.length;
+    }
+    for (let i = 0; i < numberOfOperations; i++) {
+        array.push(array.shift());
+    }
+    console.log(array.join(' '));
+}
+solve([51, 47, 32, 61, 21], 2);
+solve([32, 21, 61, 1], 4);
+solve([2, 4, 15, 31], 5);
+
+// 14. Print Every N-th Element from an Array 
+function solve(array, step){
+    let newArray = [];
+    for (let i = 0; i < array.length; i += step) {
+        newArray.push(array[i]);
+    }
+    return newArray;
+}
+console.log(solve(['5', '20', '31', '4', '20'], 2));
+console.log(solve(['dsa','asd', 'test', 'tset'], 2));
+console.log(solve(['1', '2','3', '4', '5'], 6));
+
+// 15. List of Names
+function solve(arrayWithNames){
+    let sortedArray = [...arrayWithNames].sort((aNum, bNum) => 
+        aNum.localeCompare(bNum));
+    for (let i = 0; i < sortedArray.length; i++) {
+        console.log(`${i + 1}.${sortedArray[i]}`); 
+    }
+}
+solve(["John", "Bob", "Christina", "Ema"]);
+
+//16. Sorting Numbers
+function solve (array){
+    let sorted = [...array].sort((aNum, bNum) =>
+    aNum - bNum);
+    let newArray =[];
+    for (let i = 0; i < array.length / 2; i++) {
+        let first = sorted.shift();
+        let second = sorted.pop();
+        newArray.push(first);
+        newArray.push(second);
+       
+    }
+    return newArray;
+}
+console.log(solve([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]));
+
+//17. Reveal Words
+function solve(words, text){
+    words = words.split(', ');
+    text = text.split(' ');
+    for (let i = 0; i < text.length; i++) {
+        for (const word of words) {
+            if (text[i].startsWith('*') && text[i].length === word.length){
+                text[i] = word
+            }
+        }
+        
+    }
+console.log(text.join(' '));
+}
+solve('great, learning',
+'softuni is ***** place for ******** new programming languages');
+solve('great',
+'softuni is ***** place for learning new programming languages');
+
+//18. Modern Times of #(HashTag)
+function solve(text){
+    text = text.split(' ');
+    let words = [];
+    let pattern = /#{1}[A-Za-z]+/;
+    for (const word of text) {
+        if (pattern.test(word))
+        {
+            words.push(word.substring(1, word.length))
+        }
+    }
+    console.log(words.join('\n'));
+}
+solve('Nowadays everyone uses # to tag a #special word in #socialMedia');
+solve('The symbol # is known #variously in English-speaking #regions as the #number sign');
+
+//19. String Substring
+function solve(word, text){
+    text = text.split(' ');
+    wordToLookFor = word.toLowerCase();
+    for (const wordFromText of text) {
+        if (wordFromText.toLowerCase() === wordToLookFor) {
+            console.log(word);
+            return;
+        }
+    }
+    console.log(`${word} not found!`)
+}
+solve('javascript','JavaScript is the best programming language');
+solve('python','JavaScript is the best programming language');
+
+//20. Pascal-Case Splitter
+function solve(pascalCaseText){
+    let pattern = /[A-Z]{1}[a-z]*/g;
+    let array = [...pascalCaseText.matchAll(pattern)];
+    console.log(array.join(', '));
+}
+solve('SplitMeIfYouCanHaHaYouCantOrYouCan');
+solve('HoldTheDoor');
+solve('ThisIsSoAnnoyingToDo');
