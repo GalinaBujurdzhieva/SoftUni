@@ -1,0 +1,113 @@
+//01. Format Grade
+function solve(grade){
+    if (grade < 3.00) {
+        console.log(`Fail (2)`);
+    }
+    else if (grade >= 3 && grade < 3.50) {
+        console.log(`Poor (${grade.toFixed(2)})`);
+    }
+    else if (grade >= 3.50 && grade < 4.50) {
+        console.log(`Good (${grade.toFixed(2)})`);
+    }
+    else if (grade >= 4.50 && grade < 5.50) {
+        console.log(`Very good (${grade.toFixed(2)})`);
+    }
+    else{
+        console.log(`Excellent (${grade.toFixed(2)})`);
+    }
+}
+solve(3.33);
+solve(4.50);
+solve(2.99);
+
+//02. Math Power
+function solve(number, power){
+    console.log(Math.pow(number,power));
+}
+solve(2,8);
+solve(3, 4);
+
+//03. Repeat String
+function solve (text, count){
+    let newText = '';
+
+    for (let i = 0; i < count; i++) {
+        newText = newText.concat(text);
+    }
+    return newText;
+}
+console.log(solve('abc', 3));
+console.log(solve('String', 2));
+
+//04. Orders
+function solve(product, quantity){
+    const coffeePrice = 1.50;
+    const waterPrice = 1.00;
+    const cokePrice = 1.40;
+    const snacksPrice = 2.00;
+
+    let totalPrice = 0;
+
+    switch (product) {
+        case 'coffee':
+            totalPrice = coffeePrice * quantity;
+            break;
+        case 'water':
+            totalPrice = waterPrice * quantity;
+            break;
+        case 'coke':
+            totalPrice = cokePrice * quantity;
+            break;
+        default:
+            totalPrice = snacksPrice * quantity;
+            break;
+    }
+    console.log(totalPrice.toFixed(2));
+}
+solve('water', 5);
+solve('coffee', 2);
+
+//05. Simple Calculator
+function solve(number1, number2, operator){
+    let result = 0;
+
+    switch (operator) {
+        case 'multiply':
+            result = number1 * number2;
+            break;
+        case 'divide':
+                result = number1 / number2;
+            break;
+        case 'add':
+            result = number1 + number2;
+            break;
+        default:
+            result = number1 - number2;
+            break;
+    }
+    console.log(result);
+}
+solve(5, 5, 'multiply');
+solve(40, 8, 'divide');
+solve(12, 19, 'add');
+solve(50, 13, 'subtract');
+
+//06. Sign Check
+function solve(...array){
+    let counter = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < 0) {
+            counter++;
+        }
+    }
+    if (counter % 2 === 0) {
+        console.log(`Positive`);
+    }
+    else{
+        console.log(`Negative`);
+    }
+}
+solve(5, 12, -15);
+solve(-6, -12, 14);
+solve(-1, -2, -3);
