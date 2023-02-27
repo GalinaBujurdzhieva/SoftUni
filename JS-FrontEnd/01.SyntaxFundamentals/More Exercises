@@ -1,0 +1,214 @@
+//01. Validity Checker
+function solve(x1, y1, x2, y2){
+    let distanceBetweenFirstPointAndTheBeginning = Math.sqrt(Math.pow((0 - x1), 2) + Math.pow((0 - y1), 2));
+    let distanceBetweenSecondPointAndTheBeginning = Math.sqrt(Math.pow((0 - x2), 2) + Math.pow((0 - y2), 2));
+    let distanceBetweenTwoPoints = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+
+    if (Number.isInteger(distanceBetweenFirstPointAndTheBeginning)) {
+        console.log(`{${x1}, ${y1}} to {0, 0} is valid`)
+    }
+    else{
+        console.log(`{${x1}, ${y1}} to {0, 0} is invalid`)
+    }
+
+    if (Number.isInteger(distanceBetweenSecondPointAndTheBeginning)) {
+        console.log(`{${x2}, ${y2}} to {0, 0} is valid`)
+    }
+    else{
+        console.log(`{${x2}, ${y2}} to {0, 0} is invalid`)
+    }
+
+    if (Number.isInteger(distanceBetweenTwoPoints)) {
+        console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is valid`)
+    }
+    else{
+        console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is invalid`)
+    }
+}
+solve(3, 0, 0, 4);
+solve(2, 1, 1, 1);
+
+//02. Words Uppercase
+function solve(text){
+    let pattern = /[A-Za-z0-9]+/g;
+    let array = [...text.matchAll(pattern)];
+    console.log(array.join(', ').toUpperCase());
+}
+solve('Hi, how are you?');
+solve('hello');
+
+//03. Calculator
+function solve(number1, operator, number2){
+    let result = 0;
+    switch (operator) {
+        case '+':
+            result = number1 + number2;
+            break;
+        case '-':
+            result = number1 - number2;
+        break;
+        case '/':
+            result = number1 * 1.00 / number2;
+        break;
+        case '*':
+            result = number1 * number2;
+        break;
+    }
+    console.log(result.toFixed(2));
+}
+solve(5, '+', 10);
+solve(25.5, '-', 3);
+
+// 04. Gladiator Expenses
+function solve(lostFightsCount, helmetPrice, swordPrice, shieldPrice, armorPrice){
+    let totalExpenses = 0;
+    for (let i = 1; i <= lostFightsCount; i++) {
+        if (i % 2 === 0) {
+            totalExpenses += helmetPrice;
+        }
+        if (i % 3 === 0) {
+            totalExpenses += swordPrice;
+        }
+        if (i % 6 === 0) {
+            totalExpenses += shieldPrice;
+        }
+        if (i % 12 === 0) {
+            totalExpenses += armorPrice
+        }
+    }
+    console.log(`Gladiator expenses: ${totalExpenses.toFixed(2)} aureus`);
+}
+solve(7, 2, 3, 4, 5);
+solve(23, 12.50, 21.50, 40, 200);
+
+// 05. Spice Must Flow
+function solve(startingYield){
+    let totalAmountOfSpice = 0;
+    let daysCounter = 0;
+
+    while (startingYield >= 100) {
+       totalAmountOfSpice += startingYield - 26;
+       startingYield -= 10;
+       daysCounter ++;
+
+       if (startingYield < 100) {
+        totalAmountOfSpice -= 26;
+       }
+    }
+    console.log(daysCounter);
+    console.log(totalAmountOfSpice);
+}
+solve(111);
+solve(450);
+
+//06. Login
+function solve(input){
+    let username = input[0];
+    let passwords = input.slice(1, input.length);
+    let counter = 0;
+
+    let correctPassword = username.split('').reverse().join('');
+    for (const password of passwords) {
+        if (password !== correctPassword) {
+            counter++;
+            if (counter === 4) {
+                console.log(`User ${username} blocked!`);
+                return;
+            }
+            console.log(`Incorrect password. Try again.`);
+        }
+        else{
+            console.log(`User ${username} logged in.`);
+            return;
+        }
+    }
+}
+solve(['Acer','login','go','let me in','recA']);
+solve(['momo','omom']);
+solve(['sunny','rainy','cloudy','sunny','not sunny']);
+
+//07. Bitcoin "Mining"
+function solve(gold){
+    let totalMoney = 0;
+    let bitcoinCount = 0;
+    let dayOfFirstPurchase = 0;
+
+    const bitcoinPrice = 11949.16;
+    const exchangeRate = 67.51;
+
+    for (let i = 0; i < gold.length; i++) {
+            if ((i + 1) % 3 === 0) {
+                totalMoney += gold[i] * 0.7 * exchangeRate;
+            }
+            else{
+                totalMoney += gold[i] * exchangeRate;
+            } 
+            if (totalMoney >= bitcoinPrice) {
+                while (totalMoney >= bitcoinPrice) {
+                    if (dayOfFirstPurchase === 0) {
+                        dayOfFirstPurchase = i + 1;
+                    }
+                    bitcoinCount++;
+                    totalMoney -= bitcoinPrice;
+                }
+            } 
+    }
+    let moneyLeft = totalMoney;
+
+    console.log(`Bought bitcoins: ${bitcoinCount}`);
+    if (dayOfFirstPurchase !== 0) {
+        console.log(`Day of the first purchased bitcoin: ${dayOfFirstPurchase}`);
+    }
+    console.log(`Left money: ${moneyLeft.toFixed(2)} lv.`);
+}
+solve([100, 200, 300]);
+solve([50, 100]);
+solve([3124.15, 504.212, 2511.124]);
+
+//08. The Pyramid of King Djoser
+function solve(base, increment){
+    let stone = 0;
+    let marble = 0;
+    let lapisLazuli = 0;
+    let gold = 0;
+    let height = 0;
+    let counter = 0;
+
+    if (base % 2 === 1) {
+        for (let i = base; i > 1; i-=2) {
+            counter++;
+            stone += (i-2) * (i-2) * increment;
+            if (counter % 5 === 0) {
+                lapisLazuli += (i * 4 - 4) * increment;
+            }
+            else{
+                marble += (i * 4 - 4) * increment;
+            }
+        }
+        gold = 1 * 1 * increment;
+    }
+    else{
+        for (let i = base; i > 2; i-=2) {
+            counter++;
+            stone += (i-2) * (i-2) * increment;
+            if (counter % 5 === 0) {
+                lapisLazuli += (i * 4 - 4) * increment;
+            }
+            else{
+                marble += (i * 4 - 4) * increment;
+            }
+        }
+        gold = 2 * 2 * increment;
+    }
+    height = Math.floor((counter + 1) * increment)
+    
+    console.log(`Stone required: ${Math.ceil(stone)}`);
+    console.log(`Marble required: ${Math.ceil(marble)}`);
+    console.log(`Lapis Lazuli required: ${Math.ceil(lapisLazuli)}`);
+    console.log(`Gold required: ${Math.ceil(gold)}`);
+    console.log(`Final pyramid height: ${height}`);
+}
+solve(11, 1);
+solve(11, 0.75);
+solve(12, 1);
+solve(23, 0.5);
