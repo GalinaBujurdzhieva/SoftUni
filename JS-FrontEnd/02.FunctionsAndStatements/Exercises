@@ -1,0 +1,174 @@
+//01. Smallest of Three Numbers
+function smallestNumber(...numbers){
+    let array = numbers.sort((aNum, bNum) =>
+    aNum - bNum);
+    console.log(array[0]);
+}
+smallestNumber(2, 5, 3);
+smallestNumber(600, 342, 123);
+smallestNumber(25, 21, 4);
+smallestNumber(2, 2, 2);
+
+//02. Add and Subtract
+function addAndSubtract(numOne, numTwo, numThree){
+    function sum(numOne, numTwo){
+        return numOne + numTwo;
+    }
+    console.log(sum(numOne,numTwo) - numThree);
+}
+addAndSubtract(23,6,10);
+addAndSubtract(1,17,30);
+addAndSubtract(42,58,100);
+
+//03. Characters and Range
+function charactersInRange (charOne, charTwo){
+    let firstCharASCIICode = charOne.charCodeAt(0);
+    let secondCharASCIICode = charTwo.charCodeAt(0);
+    let arrayWithChars = [];
+
+    if (firstCharASCIICode < secondCharASCIICode) {
+        for (let i = firstCharASCIICode + 1; i < secondCharASCIICode; i++) {
+            arrayWithChars.push(String.fromCharCode(i));
+        }
+    }
+    else{
+        for (let i = secondCharASCIICode + 1; i < firstCharASCIICode; i++) {
+            arrayWithChars.push(String.fromCharCode(i));
+        }
+    }
+    console.log(arrayWithChars.join(' '));
+}
+charactersInRange('a', 'd');
+charactersInRange('#', ':');
+charactersInRange('C', '#');
+
+//04. Odd and Even Sum
+function oddAndEvenSum(number){
+    let numberAsString = number.toFixed();
+    let oddSum = 0;
+    let evenSum = 0;
+    
+    for (let i = 0; i < numberAsString.length; i++) {
+        let currentDigit = Number(numberAsString[i]);
+        if (currentDigit % 2 === 1) {
+            oddSum += currentDigit;
+        }
+        else{
+            evenSum += currentDigit;
+        }
+    }
+    console.log(`Odd sum = ${oddSum}, Even sum = ${evenSum}`);
+    }
+    oddAndEvenSum(1000435);
+    oddAndEvenSum(3495892137259234);
+
+    //05. Palindrome Integers
+function palindrome (numbers){
+    for (let i = 0; i < numbers.length; i++) {
+        let numberAsString = numbers[i].toFixed();
+        let reversedNumberAsString = numberAsString.split('').reverse().join('');
+        if (numberAsString === reversedNumberAsString) {
+            console.log('true');
+        }
+        else{
+            console.log('false');
+        }
+    }
+    }
+    palindrome([123,323,421,121]);
+    palindrome([32,2,232,1010]);
+
+    //06. Password Validator
+function passwordValidator(password){
+    if (/^(?=(?:\D*\d){2})[a-zA-Z0-9]{6,10}$/.test(password)) {
+        console.log(`Password is valid`);  
+    }
+    else{
+        if (password.length < 6 || password.length > 10) {
+            console.log(`Password must be between 6 and 10 characters`);
+        }
+        if(!/^[a-zA-Z0-9]+$/.test(password)) {
+            console.log(`Password must consist only of letters and digits`);
+        }
+        if(!/(\D*\d){2,}/.test(password)){
+            console.log(`Password must have at least 2 digits`);
+        }
+    }
+}
+passwordValidator('login');
+passwordValidator('Mypass123');
+passwordValidator('Pa$s$s');
+
+//07. NxN Matrix
+function matrix(n){
+    for (let i = 0; i < n; i++) {
+        let matrix = '';
+        for (let j = 0; j < n; j++) {
+            matrix += n.toFixed() + ' ';
+        }
+        console.log(matrix.trimEnd());
+    }
+}
+matrix(3);
+matrix(7);
+
+//08. Perfect Number
+function perfectNumber(number){
+    let divisorsSum = 1;
+    for (let i = 2; i <= number/2; i++) {
+        if (number % i === 0) {
+            divisorsSum += i;
+        }
+    }
+    if (divisorsSum === number) {
+        console.log(`We have a perfect number!`);
+    }
+    else{
+        console.log(`It's not so perfect.`);
+    }
+}
+perfectNumber(6);
+perfectNumber(28);
+perfectNumber(1236498);
+
+// 09. Loading Bar
+function loadingBar(number){
+    let numberDividedToTen = number / 10;
+    let loading = number.toFixed() + '% [';
+
+    if(number === 100){
+        console.log(`100% Complete!`);
+        console.log(`[%%%%%%%%%%]`);
+        return;
+    }
+    else{
+        for (let i = 1; i <= numberDividedToTen; i++) {
+            loading += '%';
+        }
+        for (let j = numberDividedToTen + 1; j <= 10; j++) {
+            loading += '.';
+        }
+        loading += ']'; 
+    }
+    console.log(loading);
+    console.log(`Still loading...`);
+}
+loadingBar(30);
+loadingBar(50);
+loadingBar(100);
+
+//10. Factorial Division
+function factorialDivision(numOne, numTwo){
+    function factorial(num) {
+        if (num < 0) 
+              return -1;
+        else if (num === 0) 
+            return 1;
+        else {
+            return (num * factorial(num - 1));
+        }
+      }
+    return (factorial(numOne) / factorial(numTwo)).toFixed(2);
+}
+console.log(factorialDivision(5, 2));
+console.log(factorialDivision(6, 2));
