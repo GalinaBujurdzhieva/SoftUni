@@ -1,0 +1,154 @@
+//01. Car Wash
+function carWash(commands){
+    let value = 0;
+    for (const command of commands) {
+        switch (command) {
+            case 'soap':
+                value += 10;
+                break;
+            case 'water':
+                value *= 1.2;
+                break;
+            case 'vacuum cleaner':
+                value *= 1.25;
+                break;
+            default:
+                value *= 0.9;
+                break;
+        }
+    }
+    console.log(`The car is ${value.toFixed(2)}% clean.`)
+}
+carWash(['soap', 'soap', 'vacuum cleaner', 'mud', 'soap', 'water']);
+carWash(["soap", "water", "mud", "mud", "water", "mud", "vacuum cleaner"]);
+
+//02. Number Modification
+function numberModification(number){
+    var numberAsString = number.toFixed();
+    var sum = 0;
+    for (let i = 0; i < numberAsString.length; i++) {
+       var currentNumber = Number(numberAsString[i]);
+       sum += currentNumber;
+       }
+
+       while (sum / numberAsString.length <= 5) {
+        numberAsString += '9';
+        sum += 9;
+       }
+
+    console.log(numberAsString);
+}
+numberModification(101);
+numberModification(5835);
+
+//03. Points Validation
+function solve(numbers){
+    let x1 = numbers[0];
+    let y1 = numbers[1];
+    let x2 = numbers[2];
+    let y2 = numbers[3];
+
+    let distanceBetweenFirstPointAndTheBeginning = Math.sqrt(Math.pow((0 - x1), 2) + Math.pow((0 - y1), 2));
+    let distanceBetweenSecondPointAndTheBeginning = Math.sqrt(Math.pow((0 - x2), 2) + Math.pow((0 - y2), 2));
+    let distanceBetweenTwoPoints = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+
+    if (Number.isInteger(distanceBetweenFirstPointAndTheBeginning)) {
+        console.log(`{${x1}, ${y1}} to {0, 0} is valid`)
+    }
+    else{
+        console.log(`{${x1}, ${y1}} to {0, 0} is invalid`)
+    }
+
+    if (Number.isInteger(distanceBetweenSecondPointAndTheBeginning)) {
+        console.log(`{${x2}, ${y2}} to {0, 0} is valid`)
+    }
+    else{
+        console.log(`{${x2}, ${y2}} to {0, 0} is invalid`)
+    }
+
+    if (Number.isInteger(distanceBetweenTwoPoints)) {
+        console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is valid`)
+    }
+    else{
+        console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is invalid`)
+    }
+}
+solve([3, 0, 0, 4]);
+solve([2, 1, 1, 1]);
+
+//04. Radio Crystals
+function radioCrystals (thickness){
+    let desiredThickness = thickness[0];
+    let cut = (currentThickness) => currentThickness / 4;
+    let lap = (currentThickness) => currentThickness * 0.8;
+    let grind = (currentThickness) => currentThickness - 20;
+    let etch = (currentThickness) => currentThickness - 2;
+    let X_ray = (currentThickness) => currentThickness + 1;
+    function transportingAndWashingMessage(){
+        console.log(`Transporting and washing`)
+    }
+    function transportingAndWashingThicknessDecreasing(thickness){
+        return Math.floor(thickness);
+    }
+
+    for (let i = 1; i < thickness.length; i++) {
+        let currentCrystalThickness = thickness[i];
+
+        let cutCount = 0;
+        let lapCount = 0;
+        let grindCount = 0;
+        let etchCount = 0;
+
+        console.log(`Processing chunk ${currentCrystalThickness} microns`)
+       
+        if (currentCrystalThickness !== desiredThickness) {
+            while (currentCrystalThickness / 4 >= desiredThickness) {
+                currentCrystalThickness = cut(currentCrystalThickness);
+                cutCount++;
+            }
+            if (cutCount > 0) {
+                console.log(`Cut x${cutCount}`);
+                transportingAndWashingMessage();
+                currentCrystalThickness = transportingAndWashingThicknessDecreasing(currentCrystalThickness);
+            }
+            
+            while (currentCrystalThickness * 0.8 >= desiredThickness) {
+                currentCrystalThickness = lap(currentCrystalThickness);
+                lapCount++;
+            }
+            if (lapCount > 0) {
+                console.log(`Lap x${lapCount}`);
+                transportingAndWashingMessage();
+                currentCrystalThickness = transportingAndWashingThicknessDecreasing(currentCrystalThickness);
+            }
+
+            while (currentCrystalThickness - 20 >= desiredThickness) {
+                currentCrystalThickness = grind(currentCrystalThickness);
+                grindCount++;
+            }
+            if (grindCount > 0) {
+                console.log(`Grind x${grindCount}`);
+                transportingAndWashingMessage();
+                currentCrystalThickness = transportingAndWashingThicknessDecreasing(currentCrystalThickness);
+            }
+
+            while (currentCrystalThickness - 2 >= desiredThickness - 1) {
+                currentCrystalThickness = etch(currentCrystalThickness);
+                etchCount++;
+            }
+            if (etchCount > 0) {
+                console.log(`Etch x${etchCount}`);
+                transportingAndWashingMessage();
+                currentCrystalThickness = transportingAndWashingThicknessDecreasing(currentCrystalThickness);
+            }
+
+            if (currentCrystalThickness < desiredThickness) {
+                currentCrystalThickness = X_ray(currentCrystalThickness);
+                console.log(`X-ray x1`);
+            }
+            console.log(`Finished crystal ${currentCrystalThickness} microns`);
+        }
+    }
+}
+radioCrystals([1375, 50000]);
+radioCrystals([1000, 4000, 8100]);
