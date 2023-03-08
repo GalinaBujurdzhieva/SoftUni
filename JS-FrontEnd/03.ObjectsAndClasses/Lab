@@ -1,0 +1,236 @@
+//01. Person Info
+function personInfo(firstName, lastName, age){
+    const person = {
+        firstName: firstName,
+        lastName: lastName,
+        age: age,
+    }
+    return person;
+}
+console.log(personInfo("Peter", "Pan", "20"));
+console.log(personInfo("George", "Smith","18"));
+
+//02. City
+function city(city){
+    let keyValuePairs = Object.entries(city);
+    
+    for (const keyValuePair of keyValuePairs) {
+        console.log(`${keyValuePair[0]} -> ${keyValuePair[1]}`);
+    }
+}
+
+city({
+    name: "Sofia",
+    area: 492,
+    population: 1238438,
+    country: "Bulgaria",
+    postCode: "1000"
+});
+city({
+    name: "Plovdiv",
+    area: 389,
+    population: 1162358,
+    country: "Bulgaria",
+    postCode: "4000"
+});
+
+//03. City Taxes
+function cityTaxes(name, population, treasury){
+    return {
+        name: name,
+        population: population, 
+        treasury: treasury,
+        taxRate: 10,
+        collectTaxes: function(){
+            this.treasury += this.population * this.taxRate
+        },
+        applyGrowth: function(percentage){
+            this.population += this.population * percentage / 100
+        },
+        applyRecession: function(percentage){
+            this.treasury -= this.treasury * percentage / 100
+        },
+    }
+}
+const city = cityTaxes('Tortuga',
+7000,
+15000
+);
+city.collectTaxes();
+console.log(city.treasury);
+city.applyGrowth(5);
+console.log(city.population);
+
+//04. Convert to Object
+function convertToObject(JSONString){
+    let myObject = JSON.parse(JSONString);
+    let keyValuePairs = Object.entries(myObject);
+    for (const keyValuePair of keyValuePairs) {
+        console.log(`${keyValuePair[0]}: ${keyValuePair[1]}`);
+    }
+}
+convertToObject('{"name": "George", "age": 40, "town": "Sofia"}');
+convertToObject('{"name": "Peter", "age": 35, "town": "Plovdiv"}')
+
+//05. Convert to JSON
+function convertToJSON(firstName, lastName, hairColor){
+    let person = {
+        name: firstName,
+        lastName: lastName, 
+        hairColor: hairColor,
+    }
+    let personAsJSON = JSON.stringify(person);
+    console.log(personAsJSON);
+}
+
+convertToJSON('George', 'Jones', 'Brown');
+convertToJSON('Peter', 'Smith', 'Blond');
+
+//06. Phone Book
+function phoneBook(inputNumbers){
+    let myPhoneBook = {};
+    for (const inputNumber of inputNumbers) {
+        let[name, phone]  = inputNumber.split(' ');
+        myPhoneBook[name] = phone;
+    }
+    for (const [key, value] of Object.entries(myPhoneBook)) {
+        console.log(`${key} -> ${value}`);
+    }
+}
+
+phoneBook(['Tim 0834212554',
+'Peter 0877547887',
+'Bill 0896543112',
+'Tim 0876566344']
+);
+phoneBook(['George 0552554',
+'Peter 087587',
+'George 0453112',
+'Bill 0845344']
+)
+
+//07. Meetings
+function meetings(inputData){
+    let scheduledMeetings = {};
+
+  for (const input of inputData) {
+    let [weekday, person] = input.split(' ');
+    let result = (weekday in scheduledMeetings);
+    if (result) {
+        console.log(`Conflict on ${weekday}!`);
+    }
+    else{
+    scheduledMeetings[weekday] = person;
+    console.log(`Scheduled for ${weekday}`);
+    }
+  }
+
+  for (const [key, value] of Object.entries(scheduledMeetings)) {
+    console.log(`${key} -> ${value}`);
+  }
+}
+meetings(['Monday Peter',
+'Wednesday Bill',
+'Monday Tim',
+'Friday Tim']
+);
+meetings(['Friday Bob',
+'Saturday Ted',
+'Monday Bill',
+'Monday John',
+'Wednesday George']
+)
+
+//08. Address Book
+function address(inputData){
+    let addresses = {};
+  
+  for (const input of inputData) {
+    let[name, address] = input.split(':');
+    addresses[name] = address;
+  }
+  
+  for (const name of Object.keys(addresses).sort()) {
+    console.log(`${name} -> ${addresses[name]}`);
+  }
+  }
+  
+  address(['Tim:Doe Crossing',
+  'Bill:Nelson Place',
+  'Peter:Carlyle Ave',
+  'Bill:Ornery Rd']
+  )
+  address(['Bob:Huxley Rd',
+  'John:Milwaukee Crossing',
+  'Peter:Fordem Ave',
+  'Bob:Redwing Ave',
+  'George:Mesta Crossing',
+  'Ted:Gateway Way',
+  'Bill:Gateway Way',
+  'John:Grover Rd',
+  'Peter:Huxley Rd',
+  'Jeff:Gateway Way',
+  'Jeff:Huxley Rd']
+  )
+
+  // 09. Cats
+function cats(inputData){ 
+    class Cat {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    meow(){
+        console.log(`${this.name}, age ${this.age} says Meow`);
+    }
+    }
+    for (let input of inputData) {
+        let[currentName, currentAge] = input.split(' ');
+        let currentCar = new Cat(currentName, currentAge);
+        currentCar.meow();
+    }
+}
+cats(['Mellow 2', 'Tom 5']);
+cats(['Candy 1', 'Poppy 3', 'Nyx 2']);
+
+//10. Songs
+function songs(input){
+    let desiredType = input[input.length - 1];
+    class Song {
+        constructor(type, name, length){
+            this.type = type;
+            this.name = name;
+            this.length = length
+        }
+    }
+
+   for (let i = 1; i < input.length - 1; i++) {
+    let currentSongInput = input[i].split('_');
+    let currentSong = new Song(currentSongInput[0], currentSongInput[1], currentSongInput[2]);
+    if (currentSong.type === desiredType) {
+        console.log(currentSong.name); 
+    }
+    else if(desiredType === 'all'){
+        console.log(currentSong.name)
+    }
+   }
+}
+
+songs([3,
+    'favourite_DownTown_3:14',
+    'favourite_Kiss_4:16',
+    'favourite_Smooth Criminal_4:01',
+    'favourite']
+    );
+songs([4,
+        'favourite_DownTown_3:14',
+        'listenLater_Andalouse_3:24',
+        'favourite_In To The Night_3:58',
+        'favourite_Live It Up_3:48',
+        'listenLater']
+        );
+songs([2,
+    'like_Replay_3:15',
+    'ban_Photoshop_3:48',
+    'all']
+    )
