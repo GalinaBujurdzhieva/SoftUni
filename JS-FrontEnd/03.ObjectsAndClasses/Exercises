@@ -39,30 +39,23 @@ towns(['Sofia | 42.696552 | 23.32601',
 towns(['Plovdiv | 136.45 | 812.575']);
 
 //03. Store Provision
-function storeProvision(productsInStock, orderedProducts){
-    productsInStock = productsInStock.map((currentNumber, index) => {
-        if(index % 2 === 1){
-           return Number(currentNumber);
+function storeProvision(productsOnStock, orderedProducts){
+    let combined = [...productsOnStock, ...orderedProducts];
+    let productsObj = {}
+
+    for (let i = 0; i < combined.length; i+=2) {
+        let currentProduct = combined[i];
+        let currentQuantity = Number(combined[i + 1]);
+        if (!productsObj.hasOwnProperty(currentProduct)) {
+            productsObj[currentProduct] = currentQuantity;
         }
         else{
-            return currentNumber;
-        }
-    })
-    for (let i = 0; i < orderedProducts.length; i+=2){
-        let productName = orderedProducts[i];
-        let productQuantity = Number(orderedProducts[i+1]);
-        if (productsInStock.includes(productName)) {
-            let indexOfQuantity = productsInStock.indexOf(productName) + 1;
-            productsInStock[indexOfQuantity] += productQuantity;    
-        }
-        else{
-            productsInStock.push(productName);
-            productsInStock.push(productQuantity);
+            productsObj[currentProduct] += currentQuantity;
         }
     }
-   for (let i = 0; i < productsInStock.length; i+=2) {
-    console.log(`${productsInStock[i]} -> ${productsInStock[i+1]}`)
-   }
+    for (const [key, value] of Object.entries(productsObj)) {
+        console.log(`${key} -> ${value}`)
+    }
 }
 
 storeProvision(['Chips', '5', 'CocaCola', '9', 'Bananas', '14', 'Pasta', '4', 'Beer', '2'],
