@@ -229,3 +229,59 @@ piccolo(['IN, CA2844AA',
 'IN, CA1234TA',
 'OUT, CA2844AA',
 'OUT, CA1234TA']);
+
+//09. Make a Dictionary
+function JSONDictionary(JSONinput){
+    let objectWithWords = {};
+ for (const JSONline of JSONinput) {
+     let line = JSON.parse(JSONline);
+    for (const [term, description] of Object.entries(line)) {
+     objectWithWords[term] = description;
+    }
+ }
+ for (const [term, description] of Object.entries(objectWithWords).sort()) {
+     console.log(`Term: ${term} => Definition: ${description}`);
+ }  
+ }
+ JSONDictionary([
+     '{"Coffee":"A hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub."}',
+     '{"Bus":"A large motor vehicle carrying passengers by road, typically one serving the public on a fixed route and for a fare."}',
+     '{"Boiler":"A fuel-burning apparatus or container for heating water."}',
+     '{"Tape":"A narrow strip of material, typically used to hold or fasten something."}',
+     '{"Microphone":"An instrument for converting sound waves into electrical energy variations which may then be amplified, transmitted, or recorded."}'
+     ]);
+ JSONDictionary([
+     '{"Cup":"A small bowl-shaped container for drinking from, typically having a handle"}',
+     '{"Cake":"An item of soft sweet food made from a mixture of flour, fat, eggs, sugar, and other ingredients, baked and sometimes iced or decorated."} ',
+     '{"Watermelon":"The large fruit of a plant of the gourd family, with smooth green skin, red pulp, and watery juice."} ',
+     '{"Music":"Vocal or instrumental sounds (or both) combined in such a way as to produce beauty of form, harmony, and expression of emotion."} ',
+     '{"Art":"The expression or application of human creative skill and imagination, typically in a visual form such as painting or sculpture, producing works to be appreciated primarily for their beauty or emotional power."} '
+     ]);
+
+//10. Vehicle
+class Vehicle{
+    constructor(type, model, parts, fuel){
+       this.type = type;
+       this.model = model;
+       this.parts = {
+           engine: parts.engine,
+           power: parts.power,
+           quality: parts.engine * parts.power
+       };
+       this.fuel = fuel;
+   }
+       drive(fuel){
+           this.fuel -= fuel
+    }
+}
+
+let partsOne = { engine: 6, power: 100 };
+let vehicleOne = new Vehicle('a', 'b', partsOne, 200);
+vehicleOne.drive(100);
+console.log(vehicleOne.fuel);
+console.log(vehicleOne.parts.quality);
+
+let parts = {engine: 9, power: 500};
+let vehicle = new Vehicle('l', 'k', parts, 840);
+vehicle.drive(20);
+console.log(vehicle.fuel);
