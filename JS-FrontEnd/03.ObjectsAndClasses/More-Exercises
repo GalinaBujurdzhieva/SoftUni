@@ -1,0 +1,233 @@
+//01. Class Storage
+class Storage{
+    constructor(capacity){
+        this.capacity = capacity;
+        this.storage = [];
+        this.totalCost = 0;
+    }
+    addProduct(product){
+        this.storage.push(product);
+        this.capacity -= product.quantity;
+        this.totalCost += product.quantity * product.price;
+    }
+    getProducts(){
+        return this.storage.map(product => JSON.stringify(product)).join("\n");
+    }
+}
+let productOne = {name: 'Cucamber', price: 1.50, quantity: 15};
+let productTwo = {name: 'Tomato', price: 0.90, quantity: 25};
+let productThree = {name: 'Bread', price: 1.10, quantity: 8};
+let storage = new Storage(50);
+storage.addProduct(productOne);
+storage.addProduct(productTwo);
+storage.addProduct(productThree);
+console.log(storage.getProducts());
+console.log(storage.capacity);
+console.log(storage.totalCost);
+
+let productOnee = {name: 'Tomato', price: 0.90, quantity: 19};
+let productTwoo = {name: 'Potato', price: 1.10, quantity: 10};
+let storagee = new Storage(30);
+storagee.addProduct(productOnee);
+storagee.addProduct(productTwoo);
+console.log(storagee.totalCost);
+
+
+//02. Catalogue
+function productsCatalog(input){
+    let catalog = {};
+    
+    for (const line of input) {
+        let [productName, productPrice] = line.split(' : ');
+        let firstLetter = productName[0];
+        if (!catalog.hasOwnProperty(firstLetter)) {
+            catalog[firstLetter] = [];
+        }
+        catalog[firstLetter].push({productName, productPrice});
+    }
+    for (const letter of Object.keys(catalog).sort()) {
+        console.log(letter);
+        for (const product of catalog[letter].sort((prodA, prodB) => prodA.productName.localeCompare(prodB.productName))) {
+            console.log(`  ${product.productName}: ${product.productPrice}`);
+        }
+    }
+}
+productsCatalog([
+    'Appricot : 20.4',
+    'Fridge : 1500',
+    'TV : 1499',
+    'Deodorant : 10',
+    'Boiler : 300',
+    'Apple : 1.25',
+    'Anti-Bug Spray : 15',
+    'T-Shirt : 10'
+    ]);
+productsCatalog([
+    'Omlet : 5.4',
+    'Shirt : 15',
+    'Cake : 59'
+    ])
+    
+//03.
+class Laptop{
+    constructor(info, quality){
+        this.info = info;
+        this.isOn = false;
+        this.quality = quality;
+    }
+    turnOn() {
+        this.isOn = true;
+        this.quality --;
+    };
+    turnOff() {
+        this.isOn = false;
+        this.quality --;
+    };
+    showInfo(){
+    return JSON.stringify(this.info);
+    }
+    get price(){
+        return 800 - this.info.age * 2 + this.quality * 0.5;
+    }
+    }
+    
+    let info1 = {producer: "Dell", age: 2, brand: "XPS"}
+    let laptopp = new Laptop(info1, 10)
+    laptopp.turnOn()
+    console.log(laptopp.showInfo())
+    laptopp.turnOff()
+    console.log(laptopp.quality)
+    laptopp.turnOn()
+    console.log(laptopp.isOn)
+    console.log(laptopp.price)
+    
+    let info = {producer: "Lenovo", age: 1, brand: "Legion"}
+    let laptop = new Laptop(info, 10)
+    laptop.turnOn()
+    console.log(laptop.showInfo())
+    laptop.turnOff()
+    laptop.turnOn()
+    laptop.turnOff()
+    console.log(laptop.isOn)
+
+    //04. Flight Schedule
+function flightSchedule(input){
+    let airportSector = input[0];
+    let changedFlights = input[1];
+    let flightStatus = input[2];
+    let flightsWithChangedStatus = {};
+    let notChangedFlights = {};
+    
+        for (const scheduledFlight of airportSector) {
+            let flightNumber = scheduledFlight.split(' ')[0];
+            let destination = scheduledFlight.split(' ').slice(1, scheduledFlight.length).join(' ');
+            for (const flight of changedFlights) {
+                let [flightID, status] = flight.split(' ');
+            if (flightID === flightNumber) {
+                flightsWithChangedStatus[destination] = status;
+                break;
+            }
+           }
+           if (!flightsWithChangedStatus.hasOwnProperty(destination)) {
+            notChangedFlights[destination] = 'Ready to fly';
+           }
+        }
+    
+       if (flightStatus[0] !== 'Ready to fly') {
+        for (const [flight, status] of Object.entries(flightsWithChangedStatus)) {
+            console.log(`{ Destination: '${flight}', Status: '${status}' }`);
+        }
+       }
+       else{
+            for (const [destination, status] of Object.entries(notChangedFlights)) {
+                console.log(`{ Destination: '${destination}', Status: '${status}' }`);
+            }
+       }
+    }
+    flightSchedule([['WN269 Delaware',
+    'FL2269 Oregon',
+     'WN498 Las Vegas',
+     'WN3145 Ohio',
+     'WN612 Alabama',
+     'WN4010 New York',
+     'WN1173 California',
+     'DL2120 Texas',
+     'KL5744 Illinois',
+     'WN678 Pennsylvania'],
+     ['DL2120 Cancelled',
+     'WN612 Cancelled',
+     'WN1173 Cancelled',
+     'SK330 Cancelled'],
+     ['Ready to fly']
+    ]);
+    
+    flightSchedule([['WN269 Delaware',
+    'FL2269 Oregon',
+     'WN498 Las Vegas',
+     'WN3145 Ohio',
+     'WN612 Alabama',
+     'WN4010 New York',
+     'WN1173 California',
+     'DL2120 Texas',
+     'KL5744 Illinois',
+     'WN678 Pennsylvania'],
+     ['DL2120 Cancelled',
+     'WN612 Cancelled',
+     'WN1173 Cancelled',
+     'SK430 Cancelled'],
+     ['Cancelled']
+    ])
+
+    //05. School Register
+function schoolRegister(input){
+    let studentsAsObj = {};
+
+    for (const line of input) {
+        let [name, grade, score] = line.split(', ');
+        let stName = name.split(': ')[1];
+        let stGrade = parseInt(grade.split(': ')[1]);
+        let stScore = parseFloat(score.split(': ')[1]);
+        if (stScore >= 3) {
+            stGrade++;
+            if (!studentsAsObj.hasOwnProperty(stGrade)) {
+                studentsAsObj[stGrade] = {};
+                studentsAsObj[stGrade].students = [];
+                studentsAsObj[stGrade].totalScore = 0;
+            }
+            studentsAsObj[stGrade].students.push(stName);
+            studentsAsObj[stGrade].totalScore += stScore;
+        }
+    }
+    for (const grade of Object.entries(studentsAsObj)) {
+        console.log(`${grade[0]} Grade`);
+        console.log(`List of students: ${grade[1].students.join(', ')}`);
+        let averageAnnualScore = (grade[1].totalScore / grade[1].students.length).toFixed(2);
+        console.log(`Average annual score from last year: ${averageAnnualScore}`);
+        console.log();
+    }
+}
+schoolRegister([
+    "Student name: Mark, Grade: 8, Graduated with an average score: 4.75",
+        "Student name: Ethan, Grade: 9, Graduated with an average score: 5.66",
+        "Student name: George, Grade: 8, Graduated with an average score: 2.83",
+        "Student name: Steven, Grade: 10, Graduated with an average score: 4.20",
+        "Student name: Joey, Grade: 9, Graduated with an average score: 4.90",
+        "Student name: Angus, Grade: 11, Graduated with an average score: 2.90",
+        "Student name: Bob, Grade: 11, Graduated with an average score: 5.15",
+        "Student name: Daryl, Grade: 8, Graduated with an average score: 5.95",
+        "Student name: Bill, Grade: 9, Graduated with an average score: 6.00",
+        "Student name: Philip, Grade: 10, Graduated with an average score: 5.05",
+        "Student name: Peter, Grade: 11, Graduated with an average score: 4.88",
+        "Student name: Gavin, Grade: 10, Graduated with an average score: 4.00"
+    ]);
+schoolRegister([
+    'Student name: George, Grade: 5, Graduated with an average score: 2.75',
+    'Student name: Alex, Grade: 9, Graduated with an average score: 3.66',
+    'Student name: Peter, Grade: 8, Graduated with an average score: 2.83',
+    'Student name: Boby, Grade: 5, Graduated with an average score: 4.20',
+    'Student name: John, Grade: 9, Graduated with an average score: 2.90',
+    'Student name: Steven, Grade: 2, Graduated with an average score: 4.90',
+    'Student name: Darsy, Grade: 1, Graduated with an average score: 5.15'
+    ]);
+    
+    
