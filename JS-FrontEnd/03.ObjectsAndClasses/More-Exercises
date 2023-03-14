@@ -32,7 +32,6 @@ storagee.addProduct(productOnee);
 storagee.addProduct(productTwoo);
 console.log(storagee.totalCost);
 
-
 //02. Catalogue
 function productsCatalog(input){
     let catalog = {};
@@ -68,7 +67,7 @@ productsCatalog([
     'Cake : 59'
     ])
     
-//03.
+//03. Class Laptop
 class Laptop{
     constructor(info, quality){
         this.info = info;
@@ -268,6 +267,128 @@ browserHistory({"Browser Name":"Mozilla Firefox",
 "Recently Closed":["Gmail", "Dropbox"],
 "Browser Logs":["Open Gmail", "Close Gmail", "Open Dropbox", "Open YouTube", "Close Dropbox"]},
 ["Open Wikipedia", "Clear History and Cache", "Open Twitter"]);
+
+//07. Sequences - 80/100 points
+function sequences(JSONinput){
+    input = JSONinput.map(number => JSON.parse(number));
+    input.forEach((number) => number.sort((NumA, NumB) => NumB - NumA));
+    input.sort((NumA, NumB) => NumA.length - NumB.length);
+    let uniqueNumberSequences = [];
+
+    const compare = (a1, a2) =>
+    a1.length == a2.length && a1.every((element, index) => element === a2[index]);
+
+    for (let i = 0; i < input.length; i++) {
+        let isUnique = true;
+
+        for (let j = 0; j < uniqueNumberSequences.length; j++) {
+            if (compare(input[i], uniqueNumberSequences[j])) {
+                isUnique = false;
+            }
+        }
+        if (isUnique) {
+            uniqueNumberSequences.push(input[i]);
+        }
+    }
+    for (const numberSequence of uniqueNumberSequences) {
+        console.log(`[${numberSequence.join(', ')}]`);
+    }
+}
+
+sequences(["[-3, -2, -1, 0, 1, 2, 3, 4]",
+"[4, -3, 3, -2, 0, -1, 1, 2]",
+"[10, 1, -17, 0, 2, 13]",
+"[4, -3, 3, -2, 2, -1, 1, 0]"]);
+
+sequences(["[7.14, 7.180, 7.339, 80.099]",
+"[7.339, 80.0990, 7.140000, 7.18]",
+"[7.339, 7.180, 7.14, 80.099]"]);
+
+sequences((["[-3, -2, -1, 0, 1, 2, 3, 4]",
+"[10, 1, -17, 0, 2, 13]",
+"[4, -3, 3, -2, 2, -1, -1, 0]",
+"[4, -3, 3, -2, 2, -1, 1, 0]"]));
+
+//08. Garage
+function carGarage(input){
+    let garage = {};
+    for (const record of input) {
+        let garageNumber = parseInt(record.split(' - ')[0]);
+        let restInfo = record.split(' - ')[1];
+        if(!garage.hasOwnProperty(garageNumber)){
+            garage[garageNumber] = {};
+            garage[garageNumber].cars = [];
+        }
+        let currentCarInfo = {};
+        let restInfoAsArray = restInfo.split(', ');
+        for (const restInfo of restInfoAsArray) {
+            let [carKey, carInfo] = restInfo.split(': ');
+            currentCarInfo[carKey] = carInfo;
+        }
+        garage[garageNumber].cars.push(currentCarInfo);
+    }
+    for (const key of Object.keys(garage)) {
+        console.log(`Garage № ${key}`);
+        cars = garage[key].cars;
+       for (const car of cars) {
+        let currentCarInfo = [];
+        for (const [carKey, carProp] of Object.entries(car)) {
+            currentCarInfo.push(`${carKey} - ${carProp}`)
+           
+        }
+        console.log(`--- ${currentCarInfo.join(', ')}`);
+       }
+    }
+}
+
+carGarage(['1 - color: blue, fuel type: diesel', '1 - color: red, manufacture: Audi', '2 - fuel type: petrol', '4 - color: dark blue, fuel type: diesel, manufacture: Fiat']);
+carGarage(['1 - color: green, fuel type: petrol', '1 - color: dark red, manufacture: WV', '2 - fuel type: diesel', '3 - color: dark blue, fuel type: petrol']);
+
+//09. Armies
+function armiesFunc(input){
+    let armies = {}
+    for (const line of input) {
+        if (line.includes('arrives')) {
+            let leaderName = line.split(' arrives')[0];
+            armies[leaderName] = {};
+            armies[leaderName].army = [];
+            armies[leaderName].totalArmyCount = 0;
+        }
+        else if(line.includes(':')){
+            let [leader, restInfo] = line.split(': ');
+            if (armies.hasOwnProperty(leader)) {
+                let [armyName, armyCount] = restInfo.split(', ');
+                armies[leader].army.push({name: armyName, count: parseInt(armyCount)});
+                armies[leader].totalArmyCount += parseInt(armyCount);
+            }
+        }
+        else if(line.includes('+')){
+            let [neededArmyName, neededArmyCount] = line.split(' + ');
+            for (const key in armies) {
+                const foundArmy = armies[key].army.find((x) => x.name === neededArmyName);
+                if (foundArmy) {
+                  foundArmy.count += parseInt(neededArmyCount);
+                  armies[key].totalArmyCount += parseInt(neededArmyCount);
+                }
+            }
+        }
+        else if(line.includes('defeated')){
+            let defeatedLeader = line.split(' defeated')[0];
+            if(armies.hasOwnProperty(defeatedLeader)){
+                delete armies[defeatedLeader];
+            }
+        }
+    }
+
+    for (const [key, leaderArmy] of Object.entries(armies).sort(([,armyA], [,armyB]) => armyB.totalArmyCount - armyA.totalArmyCount)) {
+        console.log(`${key}: ${leaderArmy.totalArmyCount}`);
+        for (const {name, count} of leaderArmy.army.sort((armyA, armyB) => armyB.count - armyA.count)) {
+            console.log(`>>> ${name} - ${count}`);
+        }
+    }
+}
+armiesFunc(['Rick Burr arrives', 'Fergus: Wexamp, 30245', 'Rick Burr: Juard, 50000', 'Findlay arrives', 'Findlay: Britox, 34540', 'Wexamp + 6000', 'Juard + 1350', 'Britox + 4500', 'Porter arrives', 'Porter: Legion, 55000', 'Legion + 302', 'Rick Burr defeated', 'Porter: Retix, 3205']);
+armiesFunc(['Rick Burr arrives', 'Findlay arrives', 'Rick Burr: Juard, 1500', 'Wexamp arrives', 'Findlay: Wexamp, 34540', 'Wexamp + 340', 'Wexamp: Britox, 1155', 'Wexamp: Juard, 43423'])
     
-    
+ 
     
