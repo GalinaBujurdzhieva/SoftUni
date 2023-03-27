@@ -17,7 +17,7 @@ function attachEvents() {
             for (const key in data) {
                 const listItem = createElement('li', `${data[key].person}: ${data[key].phone}`, phoneBookContainer);
                 const deleteBtn = createElement('button', 'Delete', listItem);
-                deleteBtn.id = key;
+                deleteBtn.id = data[key]._id;
                 deleteBtn.addEventListener('click', deletePhone);
             }
         })
