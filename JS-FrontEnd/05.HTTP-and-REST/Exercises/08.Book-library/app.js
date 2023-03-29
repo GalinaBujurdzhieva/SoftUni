@@ -36,7 +36,7 @@ function attachEvents() {
 
     fetch(url, httpHeaders)
     .then(() =>{
-      if (formTitle === 'Edit FORM') {
+      if (formTitle.textContent === 'Edit FORM') {
         formTitle.textContent = 'FORM';
         submitOrSaveBtn.textContent = 'Submit';
       }
