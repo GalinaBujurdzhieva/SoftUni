@@ -1,0 +1,198 @@
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+
+:root{
+    --clr-red-background: #e24e2a;
+    --clr-green: #1b9772;
+    --clr-dark-grey: #383838;
+    --clr-not-so-very-dark-text: #6c6555;
+    --clr-light-grey:#a2a2a2;
+    --clr-nav-grey: #ececec;
+    --clr-very-light-grey: #ffffff;
+}
+html{
+    font-family: Helvetica, sans-serif;
+}
+
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin: 20px 0px;
+}
+.header-left-section{
+    display: flex;
+    gap:10px;
+    align-items: flex-end;
+    justify-content: center;
+}
+.vertical-divider{
+    display: inline;
+    width: 2px;
+    height: 35px;
+    background-color:var(--clr-light-grey);
+}
+h1{
+    font-size: 36px;
+    line-height: 1;
+}
+.header-2{
+    color: var(--clr-not-so-very-dark-text);
+    font-size: 16px;
+    font-weight: 500;
+}
+.header-2 span{
+    color: var(--clr-light-grey)
+}
+.header-left-section{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.nav-list{
+    display: flex;
+    gap: 5px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list-item a{
+ text-decoration: none;
+ color: var(--clr-not-so-very-dark-text);
+ padding: 20px 25px;
+ background-color: var(--clr-nav-grey)
+}
+.nav-list-item.first a{
+    color: white;
+    background-color: var(--clr-red-background);
+}
+
+/* HERO SECTION */
+.hero{
+    width: 100vw;
+    height: 80vh;
+}
+.hero-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.hero-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 28vh;
+    background-color: var(--clr-red-background);
+    text-align: center;
+    padding: 0 240px;
+    color: var(--clr-light-grey);
+}
+.hero-text a{
+    color: whitesmoke;
+}
+
+/* ICONS SECTION */
+.icons-section{
+    margin-top: -20px;
+    background: var(--clr-dark-grey);
+    height: 50vh;
+    color: white;
+    padding: 0px 50px;
+}
+.icons-section .icons-list{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%
+}
+.icon-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+}
+.icon-wrapper p{
+    text-align: center;
+    color: var(--clr-not-so-very-dark-text);
+}
+.icon-wrapper h4{
+    font-weight: 500;
+}
+.horizontal-divider{
+    height: 1px;
+    width: 300px;
+    background-color: var(--clr-not-so-very-dark-text);
+}
+.icon-wrapper i{
+    background-color: var(--clr-red-background);
+    padding: 30px 20px;
+}
+
+/* BUTTON SECTION */
+.btn-section{
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-very-light-grey);
+    gap: 3px;
+}
+.btn-section h2{
+    color: var(--clr-dark-grey);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1;
+}
+.btn-section h3{
+    color: var(--clr-not-so-very-dark-text);
+    font-weight: 500;
+    font-size: 20px;
+}
+.btn-section button{
+    margin-top: 20px;
+    border: none;
+    background-color: var(--clr-green);
+    color: white;
+    font-size: 14px;
+    height: 50px;
+    width: 200px;
+}
+
+/* LIST SECTION */
+.list-section{
+    height: 45vh;
+    
+}
+.icons-list{
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: var(--clr-dark-grey);
+}
+.icon-wrapper h3{
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    padding-bottom: 30px;
+}
+
+/* FOOTER */
+footer{
+    height: 25vh;
+    background-color: var(--clr-green);
+    color: var(--clr-light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
