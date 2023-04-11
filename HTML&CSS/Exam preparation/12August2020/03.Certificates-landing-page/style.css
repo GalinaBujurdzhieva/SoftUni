@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+
+:root{
+    --clr-blue: #42abf8;
+    --clr-dark-grey-text: #3f4c5c;
+    --clr-light-grey: #f4f5f7;
+}
+
+html{
+    font-family: 'Lato', sans-serif;
+    color:var(--clr-dark-grey-text)
+}
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* HEADER */
+header{
+    margin: 0px 50px;
+    padding: 0px 30px;
+    border-bottom: 1px solid var(--clr-light-grey);
+    border-right: 1px solid var(--clr-light-grey);
+    border-left: 1px solid var(--clr-light-grey);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: absolute;
+    width: 90vw;
+    z-index: 10;
+}
+.blue-line{
+    background-color: var(--clr-blue);
+    height: 5px;
+    width: 85px;
+    position:absolute;
+    right: 270px;
+}
+.main-nav-and-logo-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo{
+    width:10%;
+}
+.nav-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+.nav-list-item{
+    font-weight: 500;
+}
+.nav-list-item.last{
+    background-color: var(--clr-blue);
+    border-radius: 100%;
+    padding: 10px;
+    color:white;
+}
+.nav-list a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HERO */
+.hero{
+    height: 70vh;
+    position: relative;
+}
+.hero::after{
+    content:"";
+    background-image: url("images/hero-certificates.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+}
+.hero-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-left: 50px;
+    
+}
+.certificate-info{
+    width: 50%;
+    padding: 10px 20px;
+    background-color: var(--clr-dark-grey-text);
+    color:white;
+    height: 300px;
+    border-radius: 10px;
+    position:absolute;
+    top: 150px;
+    left: 120px;
+}
+.certificate-info h1{
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.certificate-info p{
+    margin-bottom: 15px;
+}
+.certificate-images{
+    display: flex;
+    width: 40%;
+    position:absolute;
+    top: 155px;
+    right: -30px;
+}
+.certificate-image-one{
+    margin-top: 30px;
+    height: 80%;
+}
+.certificate-footer-text{
+    position: absolute;
+    bottom: 260px;
+    left:120px;
+    font-style: italic;
+}
+
+/* DIPLOMA */
+.diploma{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.diploma h2{
+    margin-top: 80px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+.diploma-paragraphs{
+    background-color: var(--clr-light-grey);
+    padding: 20px;
+    margin: 0px 100px;
+    height: 220px;
+}
+.diploma-grey-paragraphs{
+    margin-bottom: 10px;
+    
+}
+.diploma-footer-text{
+    background-color: white;
+    margin: 20px 0px 50px 100px;
+}
+
+/* ENGINEERING PROGRAM */
+.engineering-program{
+    height: 40vh;
+    margin: 20px 100px;
+    color: white;
+}
+.engineering-program-img{
+    width: 100%;
+    opacity: 0.8;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.engineering-program-info{
+    position: absolute;
+    left: 350px;
+    bottom: -490px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.engineering-program-info h2{
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+.engineering-program-info p{
+    width: 97%;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+.engineering-program-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  
+}
+.engineering-program-btns button{
+    border: none;
+    height: 40px;
+    padding: 0px 25px;
+    border-radius: 5px;
+}
+.engineering-program-btns .first{
+    color: var(--clr-blue);
+    background-color: white;
+}
+.engineering-program-btns .second{
+color: white;
+background-color: transparent;
+border: 1px solid white;
+}
+.vertical-divider{
+    height: 40px;
+    width: 2px;
+    background-color: white;
+
+}
+.before-footer{
+    margin: 0px 100px;
+}
+
+/* FOOTER */
+.footer-nav-and-logo-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 100px; 
+}
+.footer-logo-and-text{
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    gap: 20px;
+    color: #dddddd;
+}
+.footer-logo-img{
+    width: 25%;
+}
+.nav-list-item.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
