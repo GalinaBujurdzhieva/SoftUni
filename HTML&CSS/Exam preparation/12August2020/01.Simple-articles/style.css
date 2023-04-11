@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+
+:root{
+    --clr-dark-blue: #44a9f8;
+    --clr-light-blue:#e3f3fd;
+    --clr-text-gray: #5e6c7c;
+}
+
+html{
+    font-family: 'Lato', sans-serif;
+    color: var(--clr-text-gray);
+}
+h1, .price-element{
+    font-family: 'Montserrat', sans-serif;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 80px;
+    height: 60vh;
+}
+.what-is-included, .price-element{
+    width: 45%;
+    height: 100%;
+    border-radius: 10px;
+}
+.what-is-included{
+    background-color: var(--clr-light-blue);
+    padding: 30px 30px;
+}
+.what-is-included h1{
+    font-weight: 500;
+}
+.included-items li{
+    margin-bottom: 15px;
+}
+.included-items li i{
+    color: var(--clr-dark-blue);
+    padding-right: 15px;
+}
+.price-element{
+    border: 5px solid var(--clr-dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.price-icon-paragraph{
+text-align: center;
+margin-bottom: 10px;
+font-size: 18px;
+font-weight: 500;
+}
+.price-icon-paragraph i{
+    padding-right: 10px;
+    color: var(--clr-dark-blue);
+}
+.price-icon-paragraph span{
+    font-size: 56px;
+    color: var(--clr-dark-blue);
+    font-weight: 500;
+}
+.price-icon-button {
+    margin: 0 auto;
+    display: block;
+}
+.price h3{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.price-icon-button{
+    border: none;
+    border-radius: 7px;
+    background-color: var(--clr-dark-blue);
+    color: white;
+    font-size: 14px;
+    height: 40px;
+    width: 200px;
+}
