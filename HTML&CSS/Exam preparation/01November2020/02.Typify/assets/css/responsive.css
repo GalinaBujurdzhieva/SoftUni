@@ -1,0 +1,84 @@
+@media (max-width:600px){
+    html{
+        width: 100%;
+    }
+    h2, h3, p, form, label, ul {
+       margin: 0 auto;
+    }
+    .banner{
+        padding: 2em 0 1em 0;
+    }
+    body .banner h2{
+        width: 80vw;
+        margin: 0 auto 0;
+    }
+    .banner p{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .button.special{
+        width: 80vw;
+        margin: 0 auto;
+    }
+    .wrapper > .inner {
+        width: 100%;
+    }
+    .wrapper {
+        padding: 2em 0 0.5em 0;
+    }
+    header.major {
+        margin-bottom: 2em;
+      }
+    .features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+        margin-left: 0px 0px;
+    }
+    .feature{
+        width: 90%;
+        margin-left: 1px;
+        margin: 0 auto;
+        padding: 10px 20px 20px 20px;
+    }
+   
+    .feature h3{
+        padding-bottom: 20px;
+    }
+
+    .wrapper > .inner {
+        width: 100%;
+    }
+    .grid-form {
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    } 
+    .grid-form .form-control {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+      }
+    .grid-form .form-control.narrow {
+        width: 100vw;
+    }
+    .grid-form .actions input{
+        width: 100vw;
+        padding-left: 0px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 0 0em;
+      width: 100%;
+    }
+    .footer {
+        padding: 1em 0 1em 0;
+    }
+
+}
