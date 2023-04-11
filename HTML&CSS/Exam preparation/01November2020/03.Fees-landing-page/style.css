@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+:root{
+    --clr-hero-section-and-footer-grey-background: #54546d;
+    --clr-table-dark-grey: #e6e6e6;
+    --clr-table-light-grey: #f8f8f8;
+    --ctr-btn-light-purple:#9a5dc6;
+    --clr-green-left-side:#059c3f;
+    --clr-green-right-side:#48d37d;
+    --clr-blue-left-side:#4c6c89;
+    --clr-blue-right-side:#619ace;
+    --clr-purple-left-side:#4a37a5;
+    --clr-purple-right-side:#8b7ce0;
+    --clr-grey-text: #5b5771;
+}
+html{
+    font-family: 'Lato', sans-serif;
+    color: var(--clr-grey-text);
+}
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+/* HEADER */
+header{
+    width: 100vw;
+    height: 80px;
+    padding: 20px 130px 20px 100px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+   
+}
+.nav-list-item{
+    font-size: 14px
+}
+.nav-list-item a{
+    text-decoration: none;
+    color:inherit;
+    font-weight: 500;
+}
+
+/* HERO SECTION */
+
+.hero-section{
+    background-color: var(--clr-hero-section-and-footer-grey-background);
+    color: white;
+    position: relative;
+    height: 50vh;
+}
+.hero-section h1{
+    text-align: center;
+    padding-top: 70px;
+}
+.hero-image{
+    position: absolute;
+    top:22.5%;
+    left:-4%;
+}
+.courses-info-wrapper{
+    position: absolute; 
+    top:40%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0px 100px;
+}
+.card{
+    background-color: white;
+    border-radius: 10px;
+    height:350px;
+    overflow: hidden;
+   
+}
+.course-info{
+    color: var(--clr-grey-text);
+    height: 70%;
+    text-align: center;
+    padding: 20px 40px;
+}
+.course-info h2{
+    margin-bottom: 10px;
+}
+.course-info p{
+    margin-bottom: 10px;
+}
+.course-info button{
+    border: none;
+    border-radius: 20px;
+    background-color:var(--ctr-btn-light-purple);
+    color:white;
+    text-transform: uppercase;
+    font-size: 14px;
+    height: 40px;
+    width: 200px;
+    margin-top: 40px;
+}
+.course-prices{
+    height: 30%;
+    text-align: center;
+   
+}
+.course-prices.first{
+    background-image: linear-gradient(to right, var(--clr-green-left-side), var(--clr-green-right-side));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.course-prices.second{
+    background-image: linear-gradient(to right, var(--clr-blue-left-side), var(--clr-blue-right-side));
+}
+.course-prices.third{
+    background-image: linear-gradient(to right, var(--clr-purple-left-side), var(--clr-purple-right-side));
+}
+.course-prices.third, .course-prices.second{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+.course-price{
+    font-size: 24px;
+    font-weight: 500;
+}
+.course-price-option{
+    width: 48%;
+}
+.vertical-divider{
+    height: 80px;
+    width: 1px;
+    background-color: white;
+}
+
+/* PROS AND CONS */
+.pros-and-cons{
+    margin-top: 200px;
+    padding: 0 250px;
+}
+.pros-and-cons h3{
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.pros-and-cons p{
+    padding-bottom: 20px;
+}
+.pros-and-cons-table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top:20px;
+    margin-bottom: 80px;
+}
+.pros-and-cons-sign{
+    width: 100px;
+}
+tr{
+    height: 50px;
+}
+tr:nth-child(odd) {
+    background-color: var(--clr-table-dark-grey)
+}
+tr:nth-child(even) {
+    background-color: var(--clr-table-light-grey)
+}
+td{
+    padding-left: 20px;
+}
+
+/* POST BANK SECTION */
+.bank-credit{
+    padding: 0 130px;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    gap:30px;
+    margin-bottom: 100px;
+}
+.bank-credit-info{
+    width: 70%;
+}
+.postbank-logo{
+    align-self: center;
+}
+
+/* FOOTER */
+footer{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-hero-section-and-footer-grey-background);
+    color: #7a7793 ;
+}
