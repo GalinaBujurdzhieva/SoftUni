@@ -1,0 +1,29 @@
+@media(max-width:600px){
+    .wrapper.style2{
+        padding: 20px;
+    }
+    .wrapper.style2 .content .gallery{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .gallery > * {
+        width: 100%;
+    }
+    .spotlight > * {
+        width: 100%;
+    }
+    .spotlight .inner {
+        padding: 20px;
+        text-align: center;
+    }
+    .spotlight .inner p{
+        color: grey;
+    }
+    .spotlight, .spotlight.alt{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
