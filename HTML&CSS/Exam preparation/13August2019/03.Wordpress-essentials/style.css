@@ -1,0 +1,342 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+:root{
+    --clr-dark-blue:#234465;
+    --clr-link-blue: #5783bb;
+    --clr-orange: #ffa000;
+    --clr-nav-text-grey: #7f90a3;
+    --clr-dark-grey-background: #dadada;
+    --clr-light-grey-background: #f2f2f2;
+    --clr-text-grey: #888383;
+}
+html{
+    font-family: 'Lato', sans-serif;
+}
+button{
+    border: none;
+    background-color: var(--clr-orange);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* HEADER */
+header{
+    background-color: var(--clr-dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 150px;
+}
+.header-logo-section{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+header button{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 20px;
+}
+.nav-bar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav-bar-list{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav-bar-list-items a{
+    text-decoration: none;
+    color: var(--clr-nav-text-grey);
+    font-size: 14px;
+}
+/* MAIN */
+main{
+   position: relative;
+}
+main::before{
+    content:"";
+    background-image: url("images/wordpress.png");
+    background-repeat: no-repeat;
+    transform: rotate(20deg);
+    position: absolute;
+    top: 400px;
+    right: 0px;
+    bottom: 0px;
+    left: -460px;
+    opacity: 0.5;
+}
+
+/* MODULES */
+.modules{
+    padding: 0px 150px;
+    height: 40px;
+}
+.modules-list{
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+.modules-list-items.first{
+    color: var(--clr-orange);
+    font-size: 14px;
+}
+.modules-list-items.second{
+    color: var(--clr-dark-blue);
+    font-weight: 600;
+    font-size: 14px;
+}
+/* WORDPRESS HERO */
+.wordpress-hero{
+    color: white;
+    background-color: var(--clr-nav-text-grey);
+    height: 35vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wordpress-hero h1{
+    font-size: 52px;
+    font-weight: 600;
+}
+.wordpress-hero-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+.wordpress-hero-list-items{
+    font-size: 20px;
+    font-weight: 300;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.wordpress-hero button, .about button, .teacher-btn{
+    padding: 5px 80px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* ABSOLUTE-DIVS */
+.absolute-divs{
+    position: relative;
+}
+
+/* ABOUT */
+.about, .skills, .themes, .for-who-is-suitable, .dates-and-educational-forms, .teacher{
+    margin: 20px 200px;
+}
+.horizontal-divider{
+    height: 5px;
+    background-color: var(--clr-orange);
+    width: 200px
+}
+.about, .skills, .themes, .for-who-is-suitable, .dates-and-educational-forms, .teacher{
+    background: rgba(242,242,242, 1);
+    padding: 25px 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.about{
+    color: var(--clr-dark-blue);
+}
+.about .horizontal-divider{
+    width: 110px;
+    margin-bottom: 15px;
+}
+.about p{
+    font-size: 18px;
+}
+.skills, .themes{
+    color:var(--clr-text-grey)
+}
+
+/* SKILLS */
+.skills h2, .themes h2{
+    color: var(--clr-dark-blue);
+}
+.skills .horizontal-divider{
+    width: 370px;
+}
+.skills .skills-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-self: start;
+  gap: 10px 30px;
+}
+.skills .skills-list-items{
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+.skills .skills-list-items i{
+    color: var(--clr-orange);
+    padding-right: 10px;
+}
+
+/* THEMES */
+.themes{
+    height: 450px;
+}
+.themes .horizontal-divider{
+    width: 60px;
+}
+.themes .themes-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-self: start;
+    gap: 10px 50px;
+}
+.themes .themes-list-items{
+    background-color: var(--clr-dark-grey-background);
+    height: 30px;
+    width: 480px;
+    font-weight: 900;
+
+    display: flex;
+    align-items: center;
+}
+.themes .themes-list-items span{
+    padding: 0px 20px 0px 10px;
+    color: var(--clr-dark-blue);
+    font-weight: 800;
+}
+.themes .themes-list-items .special-span{
+    padding: 0px 10px 0px 10px;
+}
+.themes .themes-list-items .vertical-divider{
+    display: inline-block;
+    height: 30px;
+    width: 4px;
+    background-color: var(--clr-dark-blue);
+}
+
+/* FOR WHO IS SUITABLE */
+.for-who-is-suitable{
+    background-color: var(--clr-orange);
+    color: white;
+}
+.for-who-is-suitable .horizontal-divider{
+    width: 350px;
+    background-color: white;
+}
+
+/* DATES AND EDUCATIONAL FORMS*/
+.dates-and-educational-forms .dates h3{
+color: var(--clr-orange);
+}
+.dates-and-educational-forms .dates p{
+    color: var(--clr-text-grey);
+    padding-bottom: 20px;
+}
+.dates-and-educational-forms .dates a{
+    color: var(--clr-link-blue);
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+.present, .online{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-self: start;
+    gap: 10px 10px;
+    color: white;
+    width: 100%;
+}
+.present{
+    background-color: var(--clr-dark-blue);
+}
+.online{
+    background-color: var(--clr-orange);
+}
+.present h3, .online h3{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+/* TEACHER */
+.teacher{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.teacher .horizontal-divider{
+    width: 180px;
+}
+.teacher-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.teacher-info img{
+    border-radius: 100%;
+    width:8%;
+}
+.teacher-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.teacher-info-wrapper h2, .teacher-name-and-desc h3{
+    color: var(--clr-dark-blue);
+}
+.teacher-name-and-desc p{
+    color: var(--clr-text-grey);
+    padding-right: 30px;
+}
+.btn-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOOTER */
+footer{
+    background-color: var(--clr-dark-blue);
+    display: flex;
+    align-self: flex-start;
+    justify-content: space-around;
+    color: white;
+    font-size: 12px;
+    margin-top: 50px;
+    padding: 50px 170px 50px 120px ;
+}
+footer li{
+    padding-bottom: 5px;
+}
+footer h4{
+    color: var(--clr-orange);
+}
+.social{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 5px;
+}
+.social .icons i{
+    padding-right: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+}
+.social .contacts-info{
+    color: var(--clr-text-grey);
+    font-weight: 600;
+}
