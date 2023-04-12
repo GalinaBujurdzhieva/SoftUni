@@ -1,0 +1,178 @@
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --clr-red:#ff0000;
+    --clr-light-grey-background: #fbfcff;
+    --clr-dark-grey-background: #575757;
+    --clr-medium-grey-background: #dadada;
+    --clr-header-gray-text: #b6b6b6;
+}
+html{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* HEADER */
+.header-list{
+display: flex;
+justify-content: space-around;
+margin: 20px 200px;
+}
+.header-list a{
+    text-decoration: none;
+    color:var(--clr-header-gray-text);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* HERO */
+.hero, .powerbeates{
+    margin: 50px 0px 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    
+}
+.hero-div{
+    width: 40%;
+    padding-left: 80px;
+}
+.hero-image{
+    width: 45%;
+}
+.hero-heading{
+    font-size: 48px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.hero-text{
+    line-height: 2;
+    margin-bottom: 30px;
+}
+.hero-btn, .buy-btn{
+    border: none;
+    background-color: var(--clr-red);
+    color: white;
+    text-transform: uppercase;
+    height: 40px;
+    width: 200px;
+    border-radius: 25px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+/* POWERBEATS */
+.powerbeates{
+    background-color: var(--clr-light-grey-background);
+    margin: 50px 0px 50px 0px;
+    gap: 150px;
+}
+.powerbeats-image{
+    padding: 100px 0px 0px 100px;
+}
+.powerbeats-div{
+    padding: 0px 100px 0px 0px;
+}
+.powerbeats-main-heading{
+    font-size: 90px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: right;
+}
+.powerbeats-subheading{
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding-bottom: 70px;
+    text-align: right;
+}
+.powerbeats-text{
+    line-height: 2;
+    font-size: 20px;
+}
+.powerbeats-text.last{
+    padding-bottom: 30px;
+}
+.powerbeats-btn-and-span{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 40px;
+}
+.powerbeats-span i{
+    
+    font-size: 32px;
+    font-weight: 800;
+}
+.fa-regular.fa-dollar-sign::before{
+    padding-right: 5px;
+}
+
+/* FREE TRIAL */
+.free-trial{
+    background-color: var(--clr-dark-grey-background);
+    height: 50vh;
+    padding: 40px 0px;
+    font-size: 36px;
+    font-weight: 500;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   color: white;
+}
+.free-trial-with-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.free-trial-with-logo h3{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.free-trial-link a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+}
+
+/* GIRL */
+.girl{
+    background-color: var(--clr-medium-grey-background);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:0px;
+}
+.girl-info{
+    background-color: var(--clr-medium-grey-background);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+}
+
+.girl-text h2{
+    font-size: 120px;
+    text-transform: uppercase;
+}
+.girl-text p{
+    font-size: 48px;
+}
+.span-red{
+    color: var(--clr-red);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+/* FOOTER */
+footer{
+    background-color: var(--clr-light-grey-background);
+    height: 100px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
