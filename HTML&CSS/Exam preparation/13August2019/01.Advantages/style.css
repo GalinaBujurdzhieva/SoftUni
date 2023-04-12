@@ -1,0 +1,52 @@
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+:root{
+    --clr-green: #23be5e;
+    --clr-blue: #42abf8;
+    --clr-light-grey-background: #f4f5f7;
+}
+
+html{
+    font-family: 'Lato', sans-serif;
+}
+
+section{
+    margin: 150px 150px 0px 30px;
+    width: 100%;
+}
+section h2{
+    display: inline-block;
+    background-color: var(--clr-blue);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    
+    position: absolute;
+    top: 110px;
+    right: 274px;
+}
+table{
+    background-color: var(--clr-light-grey-background);
+    width: 80%;
+    height: 70vh;
+    border-radius: 10px 0px 10px 10px;
+    position: relative;
+}
+td{
+    border-bottom: 2px solid white;
+    padding-left: 20px;
+}
+i{
+    background-color: var(--clr-green);
+    border-radius: 100%;
+    color:white;
+    padding: 5px;
+}
+.icon-cell{
+    text-align: center;
+}
