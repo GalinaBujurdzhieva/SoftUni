@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
+
+:root{
+    --clr-gray: #7c8585;
+}
+
+html{
+    font-family: 'Inter', sans-serif;
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("image/background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.cards-container{
+    width: 100vw;
+    height: 95vh;
+
+   padding-top: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 40px;
+
+}
+.card{
+    background-color: white;
+    height: 80%;
+    width: 28%;
+    padding: 30px 30px;
+    position: relative;
+}
+.card.second{
+    height: 85%;
+}
+
+h1, h2, p, ul{
+    margin-bottom: 30px;
+}
+h1{
+   text-transform: uppercase;
+   font-size: 28px;
+   font-weight: 600;
+}
+h2{
+    font-size: 22px;
+    font-weight: 300;
+}
+
+h2 span{
+    font-size: 54px;
+    font-weight: 600;
+}
+
+p{
+    color: var(--clr-gray);
+    font-size: 14px;
+}
+li{
+    margin-bottom: 10px;
+}
+li i{
+    padding-right: 3px;
+}
+
+button{
+    border: none;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 30px;
+}
